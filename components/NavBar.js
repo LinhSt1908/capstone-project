@@ -25,8 +25,8 @@ function NavBar() {
 export default NavBar;
 
 const NavWrapperStyle = styled.div`
-  position: sticky;
-
+  position: fixed;
+  z-index: 1;
   width: 100vw;
   height: 10vh;
   bottom: 0;
