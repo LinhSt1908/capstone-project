@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 function MyApp({ Component, pageProps }) {
   const [formData, setFormData] = useState(null);
