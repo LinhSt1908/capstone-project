@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
-export default function AddButton({ addNewData }) {
+export default function InputForm({ addNewData }) {
   const {
     register,
     handleSubmit,
@@ -105,6 +105,6 @@ const Button = styled.button`
   border: 1px solid;
   margin: auto;
   margin-top: 2rem;
-  box-shadow: 5px 5px 5px #c6b5b3;
+  box-shadow: 5px 5px 5px #cb8e86;
   cursor: pointer;
 `;
