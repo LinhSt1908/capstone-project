@@ -4,10 +4,11 @@ import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import Image from "next/image";
 import plusIcon from "../public/icons/plusIcon.svg";
-import InputFieldHome from "../components/InputFieldHome";
-import InputFieldButton from "../components/InputFieldButton";
+import CreateToDo from "../components/CreateToDo";
+import InputForm from "../components/InputForm";
 
-export default function Home() {
+export default function Home({ addNewData, formData }) {
+  console.log(formData);
   return (
     <>
       <Head>
@@ -19,22 +20,34 @@ export default function Home() {
       <MainWrapper>
         <TextWrapperStyle>
           <BigFontStyle className="BigFontStyle">
-            <p>Ihr Name & Sein Name</p>
+            {formData === null ? (
+              <p>Ihr Name & Sein Name </p>
+            ) : (
+              <p>
+                {formData.brideName} & {formData.groomName}
+              </p>
+            )}
           </BigFontStyle>
           <Line>________________________________________</Line>
           <MediumFontStyle className="MediumFontStyle">
-            <p>XX.XX.XXXX</p>
-            <p>Ort, Beginn</p>
+            {formData === null ? <p>XX.XX.XXXX</p> : <p>{formData.date}</p>}
+            {formData === null ? (
+              <p>Ort, Beginn</p>
+            ) : (
+              <p>
+                {formData.place}, {formData.time}
+              </p>
+            )}
           </MediumFontStyle>
-          <p>
+          <IconStyle>
             <Image src={plusIcon} alt="Plus" width={40} height={40} />
-          </p>
-          <InputFieldButton />
+          </IconStyle>
+          <InputForm addNewData={addNewData} />
           <BigFontStyle2 className="BigFontStyle">
             <p>Eure wichtigsten To-Do´s</p>
           </BigFontStyle2>
           <Line>________________________________________</Line>
-          <InputFieldHome />
+          <CreateToDo />
         </TextWrapperStyle>
       </MainWrapper>
       <NavBar />
@@ -67,10 +80,10 @@ const Line = styled.p`
 
 const MediumFontStyle = styled.div`
   margin-bottom: 0.5em;
-  font-weight: 900;
 `;
 
-// const SecondBigLineStyle = styled.div`
-//   font-size: 2.5em;
-//   margin-bottom: -1em;
-// `;
+const IconStyle = styled.p`
+  cursor: pointer;
+  margin: auto;
+  width: 10%;
+`;

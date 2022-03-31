@@ -9,15 +9,21 @@ function NavBar() {
   return (
     <NavWrapperStyle>
       <IconStyle>
-        <Link href="/" passHref>
-          <Image src={homeIcon} alt="Home" width={40} height={40} />
-        </Link>
-        <Link href="./guestpage" passHref>
-          <Image src={guestIcon} alt="Guest" width={40} height={40} />
-        </Link>
-        <Link href="./budgetpage" passHref>
-          <Image src={budgetIcon} alt="Budget" width={35} height={35} />
-        </Link>
+        <HomeStyle>
+          <Link href="/" passHref>
+            <Image src={homeIcon} alt="Home" width={40} height={40} />
+          </Link>
+        </HomeStyle>
+        <GuestStyle>
+          <Link href="/guestpage" passHref>
+            <Image src={guestIcon} alt="Guest" width={40} height={40} />
+          </Link>
+        </GuestStyle>
+        <BudgetStyle>
+          <Link href="/budgetpage" passHref>
+            <Image src={budgetIcon} alt="Budget" width={35} height={35} />
+          </Link>
+        </BudgetStyle>
       </IconStyle>
     </NavWrapperStyle>
   );
@@ -43,5 +49,34 @@ const IconStyle = styled.div`
   right: 0;
   display: flex;
   justify-content: space-evenly;
+`;
+
+const HomeStyle = styled.div`
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  cursor: pointer;
+`;
+
+const GuestStyle = styled.div`
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  cursor: pointer;
+`;
+
+const BudgetStyle = styled.div`
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
   cursor: pointer;
 `;
