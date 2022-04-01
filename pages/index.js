@@ -65,7 +65,7 @@ const TextWrapperStyle = styled.div`
 `;
 
 const BigFontStyle = styled.div`
-  margin-top: 3.5em;
+  margin-top: 3em;
 `;
 
 const BigFontStyle2 = styled.div`
@@ -75,7 +75,7 @@ const BigFontStyle2 = styled.div`
 const Line = styled.p`
   color: #f5b424;
   font-weight: 900;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 `;
 
 const MediumFontStyle = styled.div`
@@ -83,7 +83,10 @@ const MediumFontStyle = styled.div`
 `;
 
 const IconStyle = styled.p`
-  cursor: pointer;
   margin: auto;
   width: 10%;
+  &:active {
+    height: 2em;
+    width: 2em;
+  }
 `;
