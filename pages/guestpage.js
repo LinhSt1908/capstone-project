@@ -1,53 +1,63 @@
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
+import styled from "styled-components";
+import Image from "next/image";
+import plusIcon from "../public/icons/plusIcon.svg";
+import InputFormGuest from "../components/InputFormGuest";
 
 export default function GuestPage() {
   return (
     <>
       <Header />
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-      dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate
-      velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis
-      at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-      luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem
-      ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-      euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-      enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-      lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-      iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-      illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-      odio dignissim qui blandit praesent luptatum zzril delenit augue duis
-      dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis
-      eleifend option congue nihil imperdiet doming id quod mazim placerat facer
-      possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-      sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-      erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-      molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero
-      eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam
-      aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed
-      tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna
-      no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor
-      sit amet. Lorem ipsum dolor sit amet, consetetur
+      <MainWrapper>
+        <TextWrapperStyle>
+          <BigFontStyle className="BigFontStyle">
+            Freunde & Familie
+          </BigFontStyle>
+          <Line>________________________________________</Line>
+          <Button type="button" className="MediumFontStyle" value="add guest">
+            + Gast hinzufügen
+          </Button>
+          <p>
+            <Image src={plusIcon} alt="Plus" width={40} height={40} />
+          </p>
+
+          <InputFormGuest />
+        </TextWrapperStyle>
+      </MainWrapper>
+
       <NavBar />
     </>
   );
 }
+
+const MainWrapper = styled.main`
+  margin: 0;
+  padding: 1rem;
+`;
+
+const TextWrapperStyle = styled.div`
+  text-align: center;
+`;
+
+const BigFontStyle = styled.div`
+  margin-top: 3em;
+`;
+
+const Line = styled.p`
+  color: #f5b424;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+`;
+
+const Button = styled.button`
+  background-color: #f9e4d4;
+  border-radius: 1em;
+  border-color: #6c4a4a;
+  padding: 0.5em;
+  width: 30%;
+  border: 1px solid;
+  margin: auto;
+  margin-top: 1rem;
+  box-shadow: 5px 5px 5px #ccb29e;
+`;
