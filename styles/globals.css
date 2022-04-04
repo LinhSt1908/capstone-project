@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@200;500;700;800&display=swap');
+
 
 * {
   margin: 0;
@@ -15,19 +15,21 @@
 
 .MediumFontStyle {
   font-family: "Arima Madurai", cursive; 
-  font-size: 1.5em;
-  font-weight: 900;
+  font-size: 1.2em;
+  font-weight: 700;
 }
 
-.MediumFontStyleKlein {
+.MediumFontStyle2 {
   font-family: "Arima Madurai", cursive; 
-  font-size: 1.2em;
-  font-weight: 900;
-  
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 .SmallFontStyle {
-  font-family: 'Lobster Two', cursive;
-  font-size: 1.4rem;
+  font-family: "Arima Madurai", cursive; 
+  font-size: 1.2em;
+  font-weight: 200;
 }
+
+
 

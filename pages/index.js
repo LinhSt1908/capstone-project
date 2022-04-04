@@ -2,13 +2,17 @@ import Head from "next/head";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import styled from "styled-components";
-import Image from "next/image";
-import plusIcon from "../public/icons/plusIcon.svg";
+import { useState } from "react";
+import PlusButton from "../components/Buttons/PlusButton";
 import CreateToDo from "../components/CreateToDo";
-import InputForm from "../components/InputForm";
+import InputFormHome from "../components/InputFormHome";
 
 export default function Home({ addNewData, formData }) {
-  console.log(formData);
+  const [showMe, setShowMe] = useState(true);
+  function toggle() {
+    setShowMe(!showMe);
+  }
+
   return (
     <>
       <Head>
@@ -28,8 +32,8 @@ export default function Home({ addNewData, formData }) {
               </p>
             )}
           </BigFontStyle>
-          <Line>________________________________________</Line>
-          <MediumFontStyle className="MediumFontStyle">
+          <Line></Line>
+          <MediumFontStyle className="MediumFontStyle2">
             {formData === null ? <p>XX.XX.XXXX</p> : <p>{formData.date}</p>}
             {formData === null ? (
               <p>Ort, Beginn</p>
@@ -38,15 +42,17 @@ export default function Home({ addNewData, formData }) {
                 {formData.place}, {formData.time}
               </p>
             )}
+            <PlusButton toggle={toggle} />
           </MediumFontStyle>
-          <IconStyle>
-            <Image src={plusIcon} alt="Plus" width={40} height={40} />
-          </IconStyle>
-          <InputForm addNewData={addNewData} />
+          <InputFormHome
+            showMe={showMe}
+            setShowMe={setShowMe}
+            addNewData={addNewData}
+          />
           <BigFontStyle2 className="BigFontStyle">
             <p>Eure wichtigsten To-Do´s</p>
           </BigFontStyle2>
-          <Line>________________________________________</Line>
+          <Line></Line>
           <CreateToDo />
         </TextWrapperStyle>
       </MainWrapper>
@@ -74,19 +80,13 @@ const BigFontStyle2 = styled.div`
 
 const Line = styled.p`
   color: #f5b424;
-  font-weight: 900;
+  border-bottom: 2px solid;
+  width: 25rem;
+  margin: auto;
   margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
 `;
 
 const MediumFontStyle = styled.div`
   margin-bottom: 0.5em;
-`;
-
-const IconStyle = styled.p`
-  margin: auto;
-  width: 10%;
-  &:active {
-    height: 2em;
-    width: 2em;
-  }
 `;

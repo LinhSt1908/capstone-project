@@ -8,33 +8,33 @@ export default function InputFieldHome() {
     <>
       <form>
         <Fieldset>
-          <label className="SmallFontStyle" htmlFor="firstPrio">
+          <label className="MediumFontStyle" htmlFor="firstPrio">
             Erste Priorität
           </label>
           <Input
-            className="MediumFontStyleKlein"
+            className="SmallFontStyle"
             type="text"
             id="first"
             name="first"
             placeholder="z.B. Eheringe kaufen"
             maxLength={50}
           />
-          <label className="SmallFontStyle" htmlFor="secondPrio">
+          <label className="MediumFontStyle" htmlFor="secondPrio">
             Zweite Priorität
           </label>
           <Input
-            className="MediumFontStyleKlein"
+            className="SmallFontStyle"
             type="text"
             id="second"
             name="second"
             placeholder="z.B. Location buchen"
             maxLength={50}
           />
-          <label className="SmallFontStyle" htmlFor="thirdPrio">
+          <label className="MediumFontStyle" htmlFor="thirdPrio">
             Dritte Priorität
           </label>
           <Input
-            className="MediumFontStyleKlein"
+            className="SmallFontStyle"
             type="text"
             id="third"
             name="third"
@@ -74,8 +74,4 @@ const IconStyle = styled.p`
   margin: auto;
   margin-top: 1em;
   width: 10%;
-  &:active {
-    height: 2em;
-    width: 2em;
-  }
 `;
