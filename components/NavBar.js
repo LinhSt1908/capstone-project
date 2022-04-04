@@ -31,8 +31,8 @@ export default NavBar;
 const NavWrapperStyle = styled.div`
   position: fixed;
   z-index: 1;
-  width: 100vw;
-  height: 9vh;
+  width: 100%;
+  height: 7vh;
   bottom: 0;
   right: 0;
   background-color: #ff928b;

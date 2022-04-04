@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
 
 export default function AddFacts({ addNewData, showMe, setShowMe }) {
   const {

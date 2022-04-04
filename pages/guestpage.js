@@ -1,9 +1,8 @@
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import styled from "styled-components";
-import Image from "next/image";
-import plusIcon from "../public/icons/plusIcon.svg";
 import InputFormGuest from "../components/InputFormGuest";
+import PlusButton from "../components/Buttons/PlusButton";
 
 export default function GuestPage() {
   return (
@@ -14,13 +13,8 @@ export default function GuestPage() {
           <BigFontStyle className="BigFontStyle">
             Freunde & Familie
           </BigFontStyle>
-          <Line>________________________________________</Line>
-          <Button type="button" className="MediumFontStyle" value="add guest">
-            + Gast hinzufügen
-          </Button>
-          <p>
-            <Image src={plusIcon} alt="Plus" width={40} height={40} />
-          </p>
+          <Line></Line>
+          <PlusButton />
 
           <InputFormGuest />
         </TextWrapperStyle>
@@ -46,18 +40,9 @@ const BigFontStyle = styled.div`
 
 const Line = styled.p`
   color: #f5b424;
-  font-weight: 900;
-  margin-bottom: 1.5rem;
-`;
-
-const Button = styled.button`
-  background-color: #f9e4d4;
-  border-radius: 1em;
-  border-color: #6c4a4a;
-  padding: 0.5em;
-  width: 30%;
-  border: 1px solid;
+  border-bottom: 2px solid;
+  width: 25rem;
   margin: auto;
-  margin-top: 1rem;
-  box-shadow: 5px 5px 5px #ccb29e;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
 `;
