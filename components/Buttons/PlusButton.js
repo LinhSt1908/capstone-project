@@ -1,8 +1,4 @@
-import { useState } from "react";
 import styled from "styled-components";
-
-// import Image from "next/image";
-// import plusIcon from "../public/icons/plusIcon.svg";
 
 export default function PlusButton({ toggle }) {
   return (
@@ -26,5 +22,6 @@ const StyledButton = styled.button`
   box-shadow: 0px 0px 0px 5px #ffd038;
   color: white;
   font-size: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
 `;

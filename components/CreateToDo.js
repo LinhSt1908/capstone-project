@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Image from "next/image";
 import plusIcon from "../public/icons/plusIcon.svg";
-// import YellowButton from "./Buttons/YellowButton";
 
 export default function InputFieldHome() {
   return (
