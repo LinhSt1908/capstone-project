@@ -1,49 +1,58 @@
 import styled from "styled-components";
-import Image from "next/image";
-import plusIcon from "../public/icons/plusIcon.svg";
+import { useFieldArray, useForm } from "react-hook-form";
+import { ToDoInput } from "./ToDoInput";
+import { ToDoListItem } from "./ToDoListItem";
 
-export default function InputFieldHome() {
+export default function InputFieldHome({ addNewToDos, toDos }) {
+  const {
+    control,
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const {
+    fields: toDoFields,
+    append: toDoAppend,
+    remove: toDoRemove,
+  } = useFieldArray({ control, name: "toDoArray" });
+  const watchToDoArray = watch("toDoArray");
+
+  function onToDoSubmit(data) {
+    addNewToDos(data);
+    console.log(data);
+  }
+
   return (
     <>
-      <form>
+      {watchToDoArray !== undefined ? (
+        <StyledList>
+          <ToDoListItem toDos={watchToDoArray} />
+        </StyledList>
+      ) : (
+        <p>Füge ein neues To Do hinzu</p>
+      )}
+      <form onSubmit={handleSubmit(onToDoSubmit)}>
         <Fieldset>
-          <label className="MediumFontStyle" htmlFor="firstPrio">
-            Erste Priorität
-          </label>
-          <Input
-            className="SmallFontStyle"
-            type="text"
-            id="first"
-            name="first"
-            placeholder="z.B. Eheringe kaufen"
-            maxLength={50}
-          />
-          <label className="MediumFontStyle" htmlFor="secondPrio">
-            Zweite Priorität
-          </label>
-          <Input
-            className="SmallFontStyle"
-            type="text"
-            id="second"
-            name="second"
-            placeholder="z.B. Location buchen"
-            maxLength={50}
-          />
-          <label className="MediumFontStyle" htmlFor="thirdPrio">
-            Dritte Priorität
-          </label>
-          <Input
-            className="SmallFontStyle"
-            type="text"
-            id="third"
-            name="third"
-            placeholder="z.B. Einladungen verschicken"
-            maxLength={50}
-          />
-          <IconStyle>
-            <Image src={plusIcon} alt="Plus" width={40} height={40} />
-          </IconStyle>
+          {toDoFields.map((item, index) => (
+            <ToDoInput
+              register={register}
+              watch={watch}
+              index={index}
+              toDoRemove={toDoRemove}
+              key={item.id}
+            />
+          ))}
         </Fieldset>
+        <ButtonContainer>
+          <StyledButton onClick={() => toDoAppend({ newToDoItem: "" })}>
+            +
+          </StyledButton>
+          <Button type="submit" className="MediumFontStyle">
+            Speichern
+          </Button>
+        </ButtonContainer>
       </form>
     </>
   );
@@ -54,23 +63,59 @@ const Fieldset = styled.div`
   flex-direction: column;
   text-align: center;
   gap: 0.5rem;
-  margin-bottom: 6em;
 `;
 
-const Input = styled.input`
+const Button = styled.button`
   background-color: #f9e4d4;
-  padding: 0.5em;
-  width: 80%;
-  border: none;
   border-radius: 1em;
-  text-align: center;
+  border-color: #6c4a4a;
+  padding: 0.5em;
+  width: 30%;
+  border: 1px solid;
   margin: auto;
-  box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
+  margin-top: 2rem;
+  box-shadow: 5px 5px 5px #ccb29e;
 `;
 
-const IconStyle = styled.p`
+const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
+
+const StyledButton = styled.button`
+  background: rgb(245, 180, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 180, 36, 1) 0%,
+    rgba(255, 208, 56, 1) 100%
+  );
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0px 0px 0px 5px #ffd038;
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 1rem;
   cursor: pointer;
-  margin: auto;
-  margin-top: 1em;
-  width: 10%;
+`;
+
+const StyledList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #ffeaa4;
+  margin: 2rem auto 2rem auto;
+  padding: 1rem;
+  width: 85%;
+  list-style-type: none;
+  > li:before {
+    content: "❤️";
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
 `;
