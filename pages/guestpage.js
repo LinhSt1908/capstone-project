@@ -15,7 +15,6 @@ export default function GuestPage() {
           </BigFontStyle>
           <Line></Line>
           <PlusButton />
-
           <InputFormGuest />
         </TextWrapperStyle>
       </MainWrapper>
