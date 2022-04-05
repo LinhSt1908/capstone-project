@@ -77,7 +77,7 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
             {...register("time")}
           />
         </Fieldset>
-        <Button type="submit" className="MediumFontStyle" value="Speichern">
+        <Button type="submit" className="MediumFontStyle">
           Speichern
         </Button>
       </form>

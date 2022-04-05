@@ -7,7 +7,7 @@ import PlusButton from "../components/Buttons/PlusButton";
 import CreateToDo from "../components/CreateToDo";
 import InputFormHome from "../components/InputFormHome";
 
-export default function Home({ addNewData, formData }) {
+export default function Home({ addNewData, formData, addNewToDos, toDos }) {
   const [showMe, setShowMe] = useState(true);
   function toggle() {
     setShowMe(!showMe);
@@ -53,7 +53,7 @@ export default function Home({ addNewData, formData }) {
             <p>Eure wichtigsten To-Do´s</p>
           </BigFontStyle2>
           <Line></Line>
-          <CreateToDo />
+          <CreateToDo addNewToDos={addNewToDos} toDos={toDos} />
         </TextWrapperStyle>
       </MainWrapper>
       <NavBar />
@@ -63,6 +63,7 @@ export default function Home({ addNewData, formData }) {
 
 const MainWrapper = styled.main`
   margin: 0;
+  margin-bottom: 6rem;
   padding: 1rem;
 `;
 
@@ -81,7 +82,7 @@ const BigFontStyle2 = styled.div`
 const Line = styled.p`
   color: #f5b424;
   border-bottom: 2px solid;
-  width: 25rem;
+  width: 80%;
   margin: auto;
   margin-bottom: 1.5rem;
   margin-top: 0.5rem;

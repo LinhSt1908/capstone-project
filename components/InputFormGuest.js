@@ -32,10 +32,15 @@ export default function AddGuest() {
             required
             placeholder="Anschrift"
           />
-          <label className="MediumFontStyle" htmlFor="companion">
-            Begleitpersonen
-          </label>
+          <p className="MediumFontStyle">Begleitpersonen</p>
           <StyledDiv className="SmallFontStyle">Weiterer Gast</StyledDiv>
+          <Input
+            className="SmallFontStyle"
+            type="text"
+            id="companionName"
+            name="companionName"
+            placeholder="Name der Begleitperson"
+          />
           <StyledDiv className="SmallFontStyle">Kinder</StyledDiv>
           <label className="MediumFontStyle" htmlFor="group">
             Gruppe
@@ -56,10 +61,10 @@ export default function AddGuest() {
             type="text"
             id="notes"
             name="notes"
-            placeholder="Habt ihr Allergien, Unverträglichkeiten etc.? Lasst es uns bitte wissen :)"
+            placeholder="Habt ihr Allergien, Unverträglichkeiten etc.?"
           />
         </Fieldset>
-        <Button type="submit" className="MediumFontStyle" value="Speichern">
+        <Button type="submit" className="MediumFontStyle">
           Speichern
         </Button>
       </form>
@@ -88,7 +93,7 @@ const Input = styled.input`
 
 const InputNotes = styled.input`
   background-color: #f9e4d4;
-  padding: 3em;
+  padding: 2em;
   width: 80%;
   border: none;
   border-radius: 1em;
