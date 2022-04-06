@@ -48,10 +48,8 @@ const IconStyle = styled.div`
   bottom: 0;
   right: 0;
   display: flex;
+
   &:active {
     border-top: 5px solid #6c4a4a;
-
-    display: flex;
-    justify-content: center;
   }
 `;
