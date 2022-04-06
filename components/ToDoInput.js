@@ -13,7 +13,6 @@ export const ToDoInput = ({ register, index, toDoRemove }) => {
         <Input
           className="SmallFontStyle"
           type="text"
-          placeholder="z.B. Eheringe kaufen"
           maxLength={50}
           {...register(`toDoArray.${index}.newToDoItem`)}
         />
@@ -45,7 +44,6 @@ const InputContainer = styled.div`
 
 const MinusButton = styled.button`
   background: #ff928b;
-
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;

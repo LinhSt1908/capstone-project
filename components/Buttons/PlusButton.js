@@ -23,5 +23,6 @@ const StyledButton = styled.button`
   color: white;
   font-size: 1.5rem;
   margin-top: 1rem;
+  margin-bottom: 2rem;
   cursor: pointer;
 `;

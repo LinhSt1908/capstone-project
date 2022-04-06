@@ -113,6 +113,7 @@ const Button = styled.button`
   margin-top: 2rem;
   margin-bottom: 5rem;
   box-shadow: 5px 5px 5px #ccb29e;
+  cursor: pointer;
 `;
 
 const StyledDiv = styled.div`

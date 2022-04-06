@@ -27,7 +27,7 @@ export default function InputFieldHome({ addNewToDos, toDos }) {
   return (
     <>
       {watchToDoArray !== undefined ? (
-        <StyledList>
+        <StyledList className="SmallFontStyle">
           <ToDoListItem toDos={watchToDoArray} />
         </StyledList>
       ) : (
@@ -70,11 +70,12 @@ const Button = styled.button`
   border-radius: 1em;
   border-color: #6c4a4a;
   padding: 0.5em;
-  width: 30%;
+  width: 28%;
   border: 1px solid;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   box-shadow: 5px 5px 5px #ccb29e;
+  cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`
@@ -100,22 +101,23 @@ const StyledButton = styled.button`
   box-shadow: 0px 0px 0px 5px #ffd038;
   color: white;
   font-size: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   cursor: pointer;
 `;
 
 const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
+  z-index: +1;
   text-align: left;
-  background-color: #ffeaa4;
-  margin: 2rem auto 2rem auto;
-  padding: 1rem;
+  box-shadow: 0 0 1em #6c4a4a;
+  margin: 3.5rem auto 3rem auto;
+  padding: 1.5rem;
   width: 85%;
   list-style-type: none;
   > li:before {
-    content: "❤️";
-    font-size: 0.8rem;
+    content: "🪷";
+    font-size: 1.5rem;
     margin-right: 1rem;
   }
 `;

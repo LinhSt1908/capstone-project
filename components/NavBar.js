@@ -38,6 +38,7 @@ const NavWrapperStyle = styled.div`
   background-color: #ff928b;
   display: flex;
   justify-content: space-evenly;
+  cursor: pointer;
 `;
 
 const IconStyle = styled.div`
@@ -47,9 +48,10 @@ const IconStyle = styled.div`
   bottom: 0;
   right: 0;
   display: flex;
-
   &:active {
-    color-scheme: goldenrod;
-    height: 11vh;
+    border-top: 5px solid #6c4a4a;
+
+    display: flex;
+    justify-content: center;
   }
 `;

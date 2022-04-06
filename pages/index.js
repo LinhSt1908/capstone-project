@@ -76,7 +76,7 @@ const BigFontStyle = styled.div`
 `;
 
 const BigFontStyle2 = styled.div`
-  margin-top: 1em;
+  margin-top: 5rem;
 `;
 
 const Line = styled.p`

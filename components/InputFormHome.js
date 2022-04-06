@@ -76,10 +76,10 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
             required
             {...register("time")}
           />
+          <Button type="submit" className="MediumFontStyle">
+            Speichern
+          </Button>
         </Fieldset>
-        <Button type="submit" className="MediumFontStyle">
-          Speichern
-        </Button>
       </form>
     </>
   );
@@ -90,13 +90,16 @@ const Fieldset = styled.div`
   flex-direction: column;
   text-align: center;
   gap: 0.5rem;
-  margin-top: 2rem;
+  margin: auto;
+  padding: 1.5rem;
+  box-shadow: 0 0 1em #6c4a4a;
+  width: 85%;
 `;
 
 const Input = styled.input`
   background-color: #f9e4d4;
   padding: 0.5em;
-  width: 80%;
+  width: 70%;
   margin-bottom: 4em;
   border: none;
   border-radius: 1em;
@@ -110,9 +113,10 @@ const Button = styled.button`
   border-radius: 1em;
   border-color: #6c4a4a;
   padding: 0.5em;
-  width: 30%;
+  width: 35%;
   border: 1px solid;
   margin: auto;
   margin-top: 2rem;
   box-shadow: 5px 5px 5px #ccb29e;
+  cursor: pointer;
 `;
