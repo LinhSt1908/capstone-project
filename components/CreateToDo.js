@@ -67,15 +67,19 @@ const Fieldset = styled.div`
 
 const Button = styled.button`
   background-color: #f9e4d4;
-  border-radius: 1em;
+  border-radius: 1rem;
   border-color: #6c4a4a;
-  padding: 0.5em;
+  padding: 0.5rem;
   width: 28%;
   border: 1px solid;
   margin: auto;
   margin-top: 1.5rem;
   box-shadow: 5px 5px 5px #ccb29e;
   cursor: pointer;
+  &:active {
+    width: 25%;
+    padding: 0.2rem;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -103,6 +107,10 @@ const StyledButton = styled.button`
   font-size: 1.5rem;
   margin-top: 1.5rem;
   cursor: pointer;
+  &:active {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;
 
 const StyledList = styled.ul`

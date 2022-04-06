@@ -92,31 +92,35 @@ const Fieldset = styled.div`
   gap: 0.5rem;
   margin: auto;
   padding: 1.5rem;
-  box-shadow: 0 0 1em #6c4a4a;
+  box-shadow: 0 0 1rem #6c4a4a;
   width: 85%;
 `;
 
 const Input = styled.input`
   background-color: #f9e4d4;
-  padding: 0.5em;
+  padding: 0.5rem;
   width: 70%;
-  margin-bottom: 4em;
+  margin-bottom: 4rem;
   border: none;
-  border-radius: 1em;
+  border-radius: 1rem;
   text-align: center;
   margin: auto;
-  box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
+  box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
 `;
 
 const Button = styled.button`
   background-color: #f9e4d4;
-  border-radius: 1em;
+  border-radius: 1rem;
   border-color: #6c4a4a;
-  padding: 0.5em;
+  padding: 0.5rem;
   width: 35%;
   border: 1px solid;
   margin: auto;
   margin-top: 2rem;
-  box-shadow: 5px 5px 5px #ccb29e;
+  box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
   cursor: pointer;
+  &:active {
+    width: 33%;
+    padding: 0.2rem;
+  }
 `;

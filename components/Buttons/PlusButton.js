@@ -25,4 +25,9 @@ const StyledButton = styled.button`
   margin-top: 1rem;
   margin-bottom: 2rem;
   cursor: pointer;
+
+  &:active {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 `;

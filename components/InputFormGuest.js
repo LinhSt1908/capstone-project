@@ -82,13 +82,13 @@ const Fieldset = styled.div`
 
 const Input = styled.input`
   background-color: #f9e4d4;
-  padding: 0.5em;
+  padding: 0.5rem;
   width: 80%;
   border: none;
-  border-radius: 1em;
+  border-radius: 1rem;
   text-align: center;
   margin: auto;
-  box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
+  box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
 `;
 
 const InputNotes = styled.input`
