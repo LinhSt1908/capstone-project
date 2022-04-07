@@ -1,9 +1,26 @@
 import styled from "styled-components";
+import { useForm } from "react-hook-form";
 
-export default function AddGuest() {
+export default function AddGuest({ showGuest, setShowGuest }) {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm();
+  function onSubmit(data) {
+    addNewData(data);
+  }
+
   return (
     <>
-      <form>
+      <form
+        style={{
+          display: showGuest ? "block" : "none",
+        }}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Fieldset>
           <label className="MediumFontStyle" htmlFor="contactData">
             Kontaktdaten
@@ -33,7 +50,12 @@ export default function AddGuest() {
             placeholder="Anschrift"
           />
           <p className="MediumFontStyle">Begleitpersonen</p>
-          <StyledDiv className="SmallFontStyle">Weiterer Gast</StyledDiv>
+          <StyledDiv className="SmallFontStyle">
+            Weiterer Gast
+            <GuestDiv>
+              <PlusButton>+</PlusButton>
+            </GuestDiv>
+          </StyledDiv>
           <Input
             className="SmallFontStyle"
             type="text"
@@ -41,7 +63,10 @@ export default function AddGuest() {
             name="companionName"
             placeholder="Name der Begleitperson"
           />
-          <StyledDiv className="SmallFontStyle">Kinder</StyledDiv>
+          <StyledDiv className="SmallFontStyle">
+            Kinder<MinusButton>-</MinusButton>
+            <PlusButton>+</PlusButton>
+          </StyledDiv>
           <label className="MediumFontStyle" htmlFor="group">
             Gruppe
           </label>
@@ -61,12 +86,13 @@ export default function AddGuest() {
             type="text"
             id="notes"
             name="notes"
-            placeholder="Habt ihr Allergien, Unverträglichkeiten etc.?"
+            placeholder="Allergien
+            oder Unverträglichkeiten?"
           />
+          <Button type="submit" className="MediumFontStyle">
+            Speichern
+          </Button>
         </Fieldset>
-        <Button type="submit" className="MediumFontStyle">
-          Speichern
-        </Button>
       </form>
     </>
   );
@@ -77,13 +103,17 @@ const Fieldset = styled.div`
   flex-direction: column;
   text-align: center;
   gap: 0.5rem;
-  margin-top: 2rem;
+  margin: auto;
+  margin-bottom: 5rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 1rem #6c4a4a;
+  width: 85%;
 `;
 
 const Input = styled.input`
   background-color: #f9e4d4;
   padding: 0.5rem;
-  width: 80%;
+  width: 90%;
   border: none;
   border-radius: 1rem;
   text-align: center;
@@ -94,7 +124,7 @@ const Input = styled.input`
 const InputNotes = styled.input`
   background-color: #f9e4d4;
   padding: 2em;
-  width: 80%;
+  width: 90%;
   border: none;
   border-radius: 1em;
   text-align: center;
@@ -107,23 +137,71 @@ const Button = styled.button`
   border-radius: 1em;
   border-color: #6c4a4a;
   padding: 0.5em;
-  width: 30%;
+  width: 47%;
   border: 1px solid;
   margin: auto;
   margin-top: 2rem;
-  margin-bottom: 5rem;
   box-shadow: 5px 5px 5px #ccb29e;
   cursor: pointer;
+  &:active {
+    width: 42%;
+    padding: 0.2rem;
+  }
 `;
 
 const StyledDiv = styled.div`
   background-color: #f9e4d4;
   padding: 0.5em;
-  width: 80%;
+  width: 90%;
   border: none;
   border-radius: 1em;
-  text-align: center;
   margin: auto;
   box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
   gap: 1rem;
+`;
+
+const GuestDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+`;
+
+const PlusButton = styled.button`
+  background: rgb(245, 180, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 180, 36, 1) 0%,
+    rgba(255, 208, 56, 1) 100%
+  );
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 0.3rem #ffd038;
+  color: white;
+  font-size: 1rem;
+  &:active {
+    width: 2rem;
+    height: 2rem;
+  }
+`;
+
+const MinusButton = styled.button`
+  background: rgb(245, 180, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 180, 36, 1) 0%,
+    rgba(255, 208, 56, 1) 100%
+  );
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 0.3rem #ffd038;
+  color: white;
+  font-size: 1rem;
+  &:active {
+    width: 2rem;
+    height: 2rem;
+  }
 `;

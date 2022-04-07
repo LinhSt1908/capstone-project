@@ -53,6 +53,7 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
             <p>Eure wichtigsten To-Do´s</p>
           </BigFontStyle2>
           <Line></Line>
+          <p className="MediumFontStyle">Fügt hier welche hinzu!</p>
           <CreateToDo addNewToDos={addNewToDos} toDos={toDos} />
         </TextWrapperStyle>
       </MainWrapper>
