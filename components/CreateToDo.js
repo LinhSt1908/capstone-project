@@ -24,16 +24,22 @@ export default function InputFieldHome({ addNewToDos, toDos }) {
     console.log(data);
   }
 
+  /* Hier muss ein State her, der showInputs verwaltet und mit dem State false anfängt*/
+
   return (
     <>
-      {watchToDoArray !== undefined ? (
+      {watchToDoArray?.length > 0 ? (
         <StyledList className="SmallFontStyle">
           <ToDoListItem toDos={watchToDoArray} />
         </StyledList>
       ) : (
-        <p>Füge ein neues To Do hinzu</p>
+        ""
       )}
       <form onSubmit={handleSubmit(onToDoSubmit)}>
+        {/* StyledButton hat einen onCLick der sagt: showInputs = true*/}
+        <StyledButton onClick={() => toDoAppend({ newToDoItem: "" })}>
+          +
+        </StyledButton>
         <Fieldset>
           {toDoFields.map((item, index) => (
             <ToDoInput
@@ -46,9 +52,7 @@ export default function InputFieldHome({ addNewToDos, toDos }) {
           ))}
         </Fieldset>
         <ButtonContainer>
-          <StyledButton onClick={() => toDoAppend({ newToDoItem: "" })}>
-            +
-          </StyledButton>
+          {/* Button "Speichern" hat einen onCLick der sagt: showInputs = false*/}
           <Button type="submit" className="MediumFontStyle">
             Speichern
           </Button>
@@ -70,14 +74,14 @@ const Button = styled.button`
   border-radius: 1rem;
   border-color: #6c4a4a;
   padding: 0.5rem;
-  width: 28%;
+  width: 38%;
   border: 1px solid;
   margin: auto;
   margin-top: 1.5rem;
   box-shadow: 5px 5px 5px #ccb29e;
   cursor: pointer;
   &:active {
-    width: 25%;
+    width: 33%;
     padding: 0.2rem;
   }
 `;
@@ -106,6 +110,7 @@ const StyledButton = styled.button`
   color: white;
   font-size: 1.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
   cursor: pointer;
   &:active {
     width: 2.5rem;
@@ -117,9 +122,9 @@ const StyledList = styled.ul`
   display: flex;
   flex-direction: column;
   z-index: +1;
-  text-align: left;
+
   box-shadow: 0 0 1em #6c4a4a;
-  margin: 3.5rem auto 3rem auto;
+  margin: 3rem auto 2rem auto;
   padding: 1.5rem;
   width: 85%;
   list-style-type: none;

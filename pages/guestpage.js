@@ -3,19 +3,25 @@ import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import InputFormGuest from "../components/InputFormGuest";
 import PlusButton from "../components/Buttons/PlusButton";
+import { useState } from "react";
 
 export default function GuestPage() {
+  const [showGuest, setShowGuest] = useState(true);
+  function toggle() {
+    setShowGuest(!showGuest);
+  }
+
   return (
     <>
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
           <BigFontStyle className="BigFontStyle">
-            Freunde & Familie
+            Familie & Freunde
           </BigFontStyle>
           <Line></Line>
-          <PlusButton />
-          <InputFormGuest />
+          <PlusButton toggle={toggle} />
+          <InputFormGuest showGuest={showGuest} setShowGuest={setShowGuest} />
         </TextWrapperStyle>
       </MainWrapper>
 
@@ -40,7 +46,7 @@ const BigFontStyle = styled.div`
 const Line = styled.p`
   color: #f5b424;
   border-bottom: 2px solid;
-  width: 25rem;
+  width: 80%;
   margin: auto;
   margin-bottom: 1.5rem;
   margin-top: 0.5rem;

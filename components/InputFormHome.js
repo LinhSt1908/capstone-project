@@ -5,11 +5,13 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
   function onSubmit(data) {
     addNewData(data);
+    reset();
   }
 
   return (
@@ -99,7 +101,7 @@ const Fieldset = styled.div`
 const Input = styled.input`
   background-color: #f9e4d4;
   padding: 0.5rem;
-  width: 70%;
+  width: 90%;
   margin-bottom: 4rem;
   border: none;
   border-radius: 1rem;
@@ -113,14 +115,14 @@ const Button = styled.button`
   border-radius: 1rem;
   border-color: #6c4a4a;
   padding: 0.5rem;
-  width: 35%;
+  width: 50%;
   border: 1px solid;
   margin: auto;
   margin-top: 2rem;
   box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
   cursor: pointer;
   &:active {
-    width: 33%;
+    width: 45%;
     padding: 0.2rem;
   }
 `;
