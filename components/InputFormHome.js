@@ -95,7 +95,7 @@ const Fieldset = styled.div`
   margin: auto;
   padding: 1.5rem;
   box-shadow: 0 0 1rem #6c4a4a;
-  width: 85%;
+  width: 95%;
 `;
 
 const Input = styled.input`

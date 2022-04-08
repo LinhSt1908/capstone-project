@@ -35,6 +35,7 @@ const NavWrapperStyle = styled.div`
   height: 7vh;
   bottom: 0;
   right: 0;
+  margin: auto;
   background-color: #ff928b;
   display: flex;
   justify-content: space-evenly;
@@ -48,7 +49,6 @@ const IconStyle = styled.div`
   bottom: 0;
   right: 0;
   display: flex;
-
   &:active {
     border-top: 5px solid #6c4a4a;
   }

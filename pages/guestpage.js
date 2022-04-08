@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import InputFormGuest from "../components/InputFormGuest";
+import AddKids from "../components/AddKids";
 import PlusButton from "../components/Buttons/PlusButton";
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ export default function GuestPage() {
           <Line></Line>
           <PlusButton toggle={toggle} />
           <InputFormGuest showGuest={showGuest} setShowGuest={setShowGuest} />
+          <AddKids />
         </TextWrapperStyle>
       </MainWrapper>
 
