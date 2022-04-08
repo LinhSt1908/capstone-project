@@ -21,7 +21,6 @@ export default function InputFieldHome({ addNewToDos, toDos }) {
 
   function onToDoSubmit(data) {
     addNewToDos(data);
-    console.log(data);
   }
 
   /* Hier muss ein State her, der showInputs verwaltet und mit dem State false anfängt*/
