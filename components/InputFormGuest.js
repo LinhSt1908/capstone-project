@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { useFieldArray, useForm } from "react-hook-form";
 import AddKids from "./AddKids";
 import { AddGuestInput } from "./AddGuestInput";
-import { AddGuestListItem } from "./AddGuestListItem";
 
 export default function AddGuest({ showGuest, setShowGuest }) {
   const {
@@ -27,13 +26,6 @@ export default function AddGuest({ showGuest, setShowGuest }) {
 
   return (
     <>
-      {/* {watchToDoArray?.length > 0 ? (
-        <StyledList className="SmallFontStyle">
-          <AddGuestListItem toDos={watchToDoArray} />
-        </StyledList>
-      ) : (
-        ""
-      )} */}
       <form
         style={{
           display: showGuest ? "block" : "none",
@@ -60,12 +52,13 @@ export default function AddGuest({ showGuest, setShowGuest }) {
             required
             placeholder="Nachname"
           />
-          <InputAddress
+          <InputTextArea
             className="SmallFontStyle"
             type="text"
             id="address"
             name="address"
             required
+            rows={3}
             placeholder="Anschrift"
           />
           <p className="MediumFontStyle">Begleitpersonen</p>
@@ -101,14 +94,14 @@ export default function AddGuest({ showGuest, setShowGuest }) {
           <label className="MediumFontStyle" htmlFor="notes">
             Anmerkungen
           </label>
-          <InputNotes
+          <InputTextArea
             className="SmallFontStyle"
             type="text"
             id="notes"
             name="notes"
             rows={3}
-            placeholder="Allergien
-            oder Unverträglichkeiten?"
+            placeholder="Bitte Allergien 
+            oder Unverträglichkeiten angeben"
           />
           <Button type="submit" className="MediumFontStyle">
             Speichern
@@ -125,7 +118,7 @@ const Fieldset = styled.div`
   gap: 0.5rem;
   margin: auto;
   margin-bottom: 5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: 0 0 1rem #6c4a4a;
   width: 95%;
 `;
@@ -141,25 +134,13 @@ const Input = styled.input`
   box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
 `;
 
-const InputAddress = styled.input`
-  background-color: #f9e4d4;
-  height: 5rem;
-  width: 100%;
-  border: none;
-  border-radius: 1em;
+const InputTextArea = styled.textarea`
+  display: flex;
   text-align: center;
-  margin: auto;
-  box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
-`;
-
-const InputNotes = styled.textarea`
   background-color: #f9e4d4;
   width: 100%;
   border: none;
   border-radius: 1em;
-  text-align: center;
-  align-content: center;
-  margin: auto;
   box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
 `;
 
@@ -171,7 +152,7 @@ const Button = styled.button`
   width: 47%;
   border: 1px solid;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   box-shadow: 5px 5px 5px #ccb29e;
   cursor: pointer;
   &:active {
@@ -188,8 +169,10 @@ const AddButton = styled.div`
 `;
 
 const StyledDiv = styled.div`
-  text-align: center;
-  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ceab93;
   height: 2.5rem;
   width: 55%;
   border: none;

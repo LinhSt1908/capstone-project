@@ -1,53 +1,56 @@
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
+import styled from "styled-components";
+import PlusButton from "../components/Buttons/PlusButton";
+import TotalBudget from "../components/TotalBudget";
+import Expenses from "../components/Expenses";
 
 export default function BudgetPage() {
   return (
     <>
       <Header />
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-      nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-      diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-      sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-      diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-      erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-      rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-      dolor sit amet. Duis autem vel eum iriure dolor in hendrerit in vulputate
-      velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis
-      at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-      luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem
-      ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-      euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-      enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-      lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-      iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
-      illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-      odio dignissim qui blandit praesent luptatum zzril delenit augue duis
-      dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis
-      eleifend option congue nihil imperdiet doming id quod mazim placerat facer
-      possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-      sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-      erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-      ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-      Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-      molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero
-      eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-      gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-      ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-      tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-      amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam
-      aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed
-      tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna
-      no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor
-      sit amet. Lorem ipsum dolor sit amet, consetetur
+      <MainWrapper>
+        <TextWrapperStyle>
+          <BigFontStyle className="BigFontStyle">
+            Budget & Ausgaben
+          </BigFontStyle>
+          <Line></Line>
+          <TotalBudget />
+          <MediumFontStyle className="MediumFontStyle2">
+            Neue Ausgabe:
+          </MediumFontStyle>
+          <PlusButton />
+          <Expenses />
+          {/* toggle={toggle}  */}
+        </TextWrapperStyle>
+      </MainWrapper>
       <NavBar />
     </>
   );
 }
+
+const MainWrapper = styled.main`
+  margin: 0;
+  padding: 1rem;
+`;
+
+const TextWrapperStyle = styled.div`
+  text-align: center;
+`;
+
+const BigFontStyle = styled.div`
+  margin-top: 3em;
+`;
+
+const Line = styled.p`
+  color: #f5b424;
+  border-bottom: 2px solid;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+`;
+
+const MediumFontStyle = styled.div`
+  margin-bottom: 0.5em;
+`;
