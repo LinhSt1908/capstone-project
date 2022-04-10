@@ -23,7 +23,6 @@ export default function GuestPage() {
           <Line></Line>
           <PlusButton toggle={toggle} />
           <InputFormGuest showGuest={showGuest} setShowGuest={setShowGuest} />
-          <AddKids />
         </TextWrapperStyle>
       </MainWrapper>
 
