@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useFieldArray, useForm } from "react-hook-form";
 import AddKids from "./AddKids";
 import { AddGuestInput } from "./AddGuestInput";
+import { Button } from "../components/InputFormHome";
+import { Input } from "../components/InputFormHome";
 
 export default function AddGuest({ showGuest, setShowGuest }) {
   const {
@@ -123,17 +125,6 @@ const Fieldset = styled.div`
   width: 95%;
 `;
 
-const Input = styled.input`
-  background-color: #f9e4d4;
-  height: 2.5rem;
-  width: 100%;
-  border: none;
-  border-radius: 1rem;
-  text-align: center;
-  margin: auto;
-  box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
-`;
-
 const InputTextArea = styled.textarea`
   display: flex;
   text-align: center;
@@ -142,23 +133,6 @@ const InputTextArea = styled.textarea`
   border: none;
   border-radius: 1em;
   box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
-`;
-
-const Button = styled.button`
-  background-color: #f9e4d4;
-  border-radius: 1em;
-  border-color: #6c4a4a;
-  padding: 0.5em;
-  width: 47%;
-  border: 1px solid;
-  margin: auto;
-  margin-top: 1rem;
-  box-shadow: 5px 5px 5px #ccb29e;
-  cursor: pointer;
-  &:active {
-    width: 42%;
-    padding: 0.2rem;
-  }
 `;
 
 const AddButton = styled.div`
@@ -201,7 +175,7 @@ const PlusButton = styled.button`
   color: white;
   font-size: 1rem;
   &:active {
-    width: 2rem;
-    height: 2rem;
+    width: 1.7rem;
+    height: 1.7rem;
   }
 `;

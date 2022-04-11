@@ -8,7 +8,7 @@ export default function PlusButton({ toggle }) {
   );
 }
 
-const StyledButton = styled.button`
+export const StyledButton = styled.button`
   background: rgb(245, 180, 36);
   background: linear-gradient(
     0deg,
@@ -27,7 +27,7 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   &:active {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.3rem;
+    height: 2.3rem;
   }
 `;

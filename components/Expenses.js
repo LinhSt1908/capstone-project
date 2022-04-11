@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Input } from "../components/InputFormHome";
 
 export default function Expenses() {
   return (
@@ -72,17 +73,6 @@ const InputAmount = styled.input`
   color: #6c4a4a;
   border-bottom: 1px solid;
   margin-bottom: 1.5rem;
-`;
-
-const Input = styled.input`
-  background-color: #f9e4d4;
-  height: 2.5rem;
-  width: 100%;
-  border: none;
-  border-radius: 1rem;
-  text-align: center;
-  margin: auto;
-  box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
 `;
 
 const InputNotes = styled.textarea`

@@ -41,7 +41,7 @@ const InputContainer = styled.div`
   align-items: center;
 `;
 
-const MinusButton = styled.button`
+export const MinusButton = styled.button`
   background: #ff928b;
   width: 1.5rem;
   height: 1.5rem;
@@ -52,7 +52,7 @@ const MinusButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   &:active {
-    width: 2rem;
-    height: 2rem;
+    width: 1.7rem;
+    height: 1.7rem;
   }
 `;

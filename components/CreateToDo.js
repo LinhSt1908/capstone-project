@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useFieldArray, useForm } from "react-hook-form";
 import { ToDoInput } from "./ToDoInput";
 import { ToDoListItem } from "./ToDoListItem";
+import { StyledButton } from "./Buttons/PlusButton";
 
 export default function InputFieldHome({ addNewToDos, toDos }) {
   const {
@@ -77,7 +78,7 @@ const Button = styled.button`
   border: 1px solid;
   margin: auto;
   margin-top: 1.5rem;
-  box-shadow: 5px 5px 5px #ccb29e;
+  box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
   cursor: pointer;
   &:active {
     width: 33%;
@@ -92,29 +93,6 @@ const ButtonContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-`;
-
-const StyledButton = styled.button`
-  background: rgb(245, 180, 36);
-  background: linear-gradient(
-    0deg,
-    rgba(245, 180, 36, 1) 0%,
-    rgba(255, 208, 56, 1) 100%
-  );
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0px 0px 0px 5px #ffd038;
-  color: white;
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
-  cursor: pointer;
-  &:active {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
 `;
 
 const StyledList = styled.ul`

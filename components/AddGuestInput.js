@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MinusButton } from "../components/ToDoInput";
 
 export const AddGuestInput = ({ register, index, addGuestRemove }) => {
   return (
@@ -38,20 +39,4 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-const MinusButton = styled.button`
-  background: #ff928b;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-shadow: 0 0 0 0.3rem #ff928b;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  &:active {
-    width: 2rem;
-    height: 2rem;
-  }
 `;

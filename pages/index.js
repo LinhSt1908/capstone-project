@@ -23,7 +23,7 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <BigFontStyle className="BigFontStyle">
+          <BigLineStyleA className="BigFontStyle">
             {formData === null ? (
               <p>Ihr Name & Sein Name </p>
             ) : (
@@ -31,9 +31,9 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
                 {formData.brideName} & {formData.groomName}
               </p>
             )}
-          </BigFontStyle>
+          </BigLineStyleA>
           <Line></Line>
-          <MediumFontStyle className="MediumFontStyle2">
+          <MediumLineStyle className="MediumFontStyle2">
             {formData === null ? <p>XX.XX.XXXX</p> : <p>{formData.date}</p>}
             {formData === null ? (
               <p>Ort, Beginn</p>
@@ -43,15 +43,15 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
               </p>
             )}
             <PlusButton toggle={toggle} />
-          </MediumFontStyle>
+          </MediumLineStyle>
           <InputFormHome
             showMe={showMe}
             setShowMe={setShowMe}
             addNewData={addNewData}
           />
-          <BigFontStyle2 className="BigFontStyle">
+          <BigLineStyleB className="BigFontStyle">
             <p>Eure wichtigsten To-Do´s</p>
-          </BigFontStyle2>
+          </BigLineStyleB>
           <Line></Line>
           <p className="MediumFontStyle">Fügt hier welche hinzu!</p>
           <CreateToDo addNewToDos={addNewToDos} toDos={toDos} />
@@ -72,15 +72,15 @@ const TextWrapperStyle = styled.div`
   text-align: center;
 `;
 
-const BigFontStyle = styled.div`
+const BigLineStyleA = styled.div`
   margin-top: 3.5em;
 `;
 
-const BigFontStyle2 = styled.div`
+const BigLineStyleB = styled.div`
   margin-top: 3rem;
 `;
 
-const Line = styled.p`
+export const Line = styled.p`
   color: #f5b424;
   border-bottom: 2px solid;
   width: 80%;
@@ -89,6 +89,6 @@ const Line = styled.p`
   margin-top: 0.5rem;
 `;
 
-const MediumFontStyle = styled.div`
+const MediumLineStyle = styled.div`
   margin-bottom: 0.5rem;
 `;

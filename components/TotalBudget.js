@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { Button } from "../components/InputFormHome";
 
 export default function TotalBudget() {
   return (
     <>
       <form>
         <Fieldset>
-          <FlexContainer>
+          <FlexContainerA>
             <label className="MediumFontStyle" htmlFor="totalBudget">
               Gesamtbudget
             </label>
@@ -15,7 +16,7 @@ export default function TotalBudget() {
               id="totalBudget"
               name="totalBudget"
             />
-          </FlexContainer>
+          </FlexContainerA>
           <FlexContainerB>
             <label className="MediumFontStyle" htmlFor="spent">
               Ausgegeben
@@ -70,24 +71,7 @@ const Input = styled.input`
   box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
 `;
 
-const Button = styled.button`
-  background-color: #f9e4d4;
-  border-radius: 1rem;
-  border-color: #6c4a4a;
-  padding: 0.5rem;
-  width: 50%;
-  border: 1px solid;
-  margin: auto;
-  margin-top: 1rem;
-  box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
-  cursor: pointer;
-  &:active {
-    width: 45%;
-    padding: 0.2rem;
-  }
-`;
-
-const FlexContainer = styled.div`
+const FlexContainerA = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;

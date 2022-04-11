@@ -4,6 +4,7 @@ import styled from "styled-components";
 import PlusButton from "../components/Buttons/PlusButton";
 import TotalBudget from "../components/TotalBudget";
 import Expenses from "../components/Expenses";
+import { Line } from "../pages/index";
 
 export default function BudgetPage() {
   return (
@@ -11,14 +12,14 @@ export default function BudgetPage() {
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <BigFontStyle className="BigFontStyle">
+          <BigLineStyle className="BigFontStyle">
             Budget & Ausgaben
-          </BigFontStyle>
+          </BigLineStyle>
           <Line></Line>
           <TotalBudget />
-          <MediumFontStyle className="MediumFontStyle2">
+          <MediumLineStyle className="MediumFontStyle2">
             Neue Ausgabe:
-          </MediumFontStyle>
+          </MediumLineStyle>
           <PlusButton />
           <Expenses />
           {/* toggle={toggle}  */}
@@ -38,19 +39,10 @@ const TextWrapperStyle = styled.div`
   text-align: center;
 `;
 
-const BigFontStyle = styled.div`
+const BigLineStyle = styled.div`
   margin-top: 3em;
 `;
 
-const Line = styled.p`
-  color: #f5b424;
-  border-bottom: 2px solid;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 1.5rem;
-  margin-top: 0.5rem;
-`;
-
-const MediumFontStyle = styled.div`
+const MediumLineStyle = styled.div`
   margin-bottom: 0.5em;
 `;

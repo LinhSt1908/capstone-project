@@ -87,7 +87,7 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
   );
 }
 
-const Fieldset = styled.div`
+export const Fieldset = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -97,11 +97,10 @@ const Fieldset = styled.div`
   width: 95%;
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   background-color: #f9e4d4;
-  padding: 0.5rem;
-  width: 90%;
-  margin-bottom: 4rem;
+  height: 2.5rem;
+  width: 100%;
   border: none;
   border-radius: 1rem;
   text-align: center;
@@ -109,7 +108,7 @@ const Input = styled.input`
   box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   background-color: #f9e4d4;
   border-radius: 1rem;
   border-color: #6c4a4a;

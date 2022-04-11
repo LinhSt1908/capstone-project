@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import InputFormGuest from "../components/InputFormGuest";
 import PlusButton from "../components/Buttons/PlusButton";
+import { Line } from "../pages/index";
 import { useState } from "react";
 
 export default function GuestPage() {
@@ -16,9 +17,9 @@ export default function GuestPage() {
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <BigFontStyle className="BigFontStyle">
+          <BigLineStyle className="BigFontStyle">
             Familie & Freunde
-          </BigFontStyle>
+          </BigLineStyle>
           <Line></Line>
           <PlusButton toggle={toggle} />
           <InputFormGuest showGuest={showGuest} setShowGuest={setShowGuest} />
@@ -39,15 +40,6 @@ const TextWrapperStyle = styled.div`
   text-align: center;
 `;
 
-const BigFontStyle = styled.div`
+const BigLineStyle = styled.div`
   margin-top: 3em;
-`;
-
-const Line = styled.p`
-  color: #f5b424;
-  border-bottom: 2px solid;
-  width: 80%;
-  margin: auto;
-  margin-bottom: 1.5rem;
-  margin-top: 0.5rem;
 `;
