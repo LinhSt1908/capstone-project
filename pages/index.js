@@ -73,11 +73,11 @@ const TextWrapperStyle = styled.div`
 `;
 
 const BigFontStyle = styled.div`
-  margin-top: 3em;
+  margin-top: 3.5em;
 `;
 
 const BigFontStyle2 = styled.div`
-  margin-top: 5rem;
+  margin-top: 3rem;
 `;
 
 const Line = styled.p`
@@ -90,5 +90,5 @@ const Line = styled.p`
 `;
 
 const MediumFontStyle = styled.div`
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5rem;
 `;

@@ -90,7 +90,6 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
 const Fieldset = styled.div`
   display: flex;
   flex-direction: column;
-  text-align: center;
   gap: 0.5rem;
   margin: auto;
   padding: 1.5rem;
@@ -118,7 +117,7 @@ const Button = styled.button`
   width: 50%;
   border: 1px solid;
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
   cursor: pointer;
   &:active {
