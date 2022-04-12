@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
 
-export default function AddFacts({ addNewData, showMe, setShowMe }) {
+export default function AddFacts({ addNewData, showMe, toggle }) {
   const {
     register,
     handleSubmit,
@@ -12,6 +12,7 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
   function onSubmit(data) {
     addNewData(data);
     reset();
+    toggle();
   }
 
   return (
@@ -90,7 +91,7 @@ export default function AddFacts({ addNewData, showMe, setShowMe }) {
 export const Fieldset = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
   margin: auto;
   padding: 1.5rem;
   box-shadow: 0 0 1rem #6c4a4a;
