@@ -1,10 +1,33 @@
 import styled from "styled-components";
 import { Input } from "../components/InputFormHome";
+import { useForm } from "react-hook-form";
 
-export default function Expenses() {
+export default function Expenses({
+  addNewData,
+  showExpense,
+  // toggle,
+  setShowExpense,
+}) {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors },
+  } = useForm();
+  function onSubmit(data) {
+    addNewData(data);
+    reset();
+    // toggle();
+  }
   return (
     <>
-      <form>
+      <form
+        style={{
+          display: showExpense ? "block" : "none",
+        }}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Fieldset>
           <label className="MediumFontStyle" htmlFor="Amount">
             <InputAmount
@@ -14,6 +37,7 @@ export default function Expenses() {
               name="amount"
               placeholder="0,00€"
             />
+            <Line></Line>
           </label>
           <label className="MediumFontStyle" htmlFor="Description">
             Beschreibung
@@ -56,7 +80,7 @@ export default function Expenses() {
 const Fieldset = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
   margin: auto;
   margin-bottom: 5rem;
   padding: 1.5rem;
@@ -70,8 +94,13 @@ const InputAmount = styled.input`
   text-align: center;
   margin: auto;
   border: none;
+`;
+
+const Line = styled.p`
   color: #6c4a4a;
   border-bottom: 1px solid;
+  width: 80%;
+  margin: auto;
   margin-bottom: 1.5rem;
 `;
 

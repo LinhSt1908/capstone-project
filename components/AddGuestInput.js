@@ -4,23 +4,32 @@ import { MinusButton } from "../components/ToDoInput";
 export const AddGuestInput = ({ register, index, addGuestRemove }) => {
   return (
     <>
-      <label
-        className="MediumFontStyle"
-        htmlFor={`addGuestArray.${index}.newAddGuestItem`}
-      ></label>
-      <InputContainer>
-        <Input
-          className="SmallFontStyle"
-          type="text"
-          {...register(`addGuestArray.${index}.newAddGuestItem`)}
-        />
-        <MinusButton type="button" onClick={() => addGuestRemove(index)}>
-          -
-        </MinusButton>
-      </InputContainer>
+      <Fieldset>
+        <label
+          className="MediumFontStyle"
+          htmlFor={`addGuestArray.${index}.newAddGuestItem`}
+        ></label>
+        <InputContainer>
+          <Input
+            className="SmallFontStyle"
+            type="text"
+            {...register(`addGuestArray.${index}.newAddGuestItem`)}
+          />
+          <MinusButton type="button" onClick={() => addGuestRemove(index)}>
+            -
+          </MinusButton>
+        </InputContainer>
+      </Fieldset>
     </>
   );
 };
+
+const Fieldset = styled.fieldset`
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  border: none;
+`;
 
 const Input = styled.input`
   background-color: #f9e4d4;
