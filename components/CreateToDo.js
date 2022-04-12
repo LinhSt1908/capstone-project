@@ -97,11 +97,7 @@ export default function InputFieldHome({
           toggle={toggle}
         >
           {/* Button "Speichern" hat einen onCLick der sagt: showInputs = false*/}
-          <Button
-            onClick={(showInput = false)}
-            type="submit"
-            className="MediumFontStyle"
-          >
+          <Button type="submit" className="MediumFontStyle">
             Speichern
           </Button>
         </ButtonContainer>
