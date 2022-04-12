@@ -44,6 +44,7 @@ const NavWrapperStyle = styled.div`
 
 const IconStyle = styled.div`
   box-sizing: border-box;
+
   top: 0;
   left: 0;
   bottom: 0;

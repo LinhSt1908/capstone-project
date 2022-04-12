@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import { useState } from "react";
-import PlusButton from "../components/Buttons/PlusButton";
+import EditButton from "../components/Buttons/EditButton";
 import CreateToDo from "../components/CreateToDo";
 import InputFormHome from "../components/InputFormHome";
 
@@ -42,12 +42,12 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
                 {formData.place}, {formData.time}
               </p>
             )}
-            <PlusButton toggle={toggle} />
+            <EditButton toggle={toggle} />
           </MediumLineStyle>
           <InputFormHome
             showMe={showMe}
-            setShowMe={setShowMe}
             addNewData={addNewData}
+            toggle={toggle}
           />
           <BigLineStyleB className="BigFontStyle">
             <p>Eure wichtigsten To-Do´s</p>

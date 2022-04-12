@@ -5,8 +5,18 @@ import PlusButton from "../components/Buttons/PlusButton";
 import TotalBudget from "../components/TotalBudget";
 import Expenses from "../components/Expenses";
 import { Line } from "../pages/index";
+import { useState } from "react";
 
-export default function BudgetPage() {
+export default function BudgetPage({
+  addNewData,
+  formData,
+  addNewExpenses,
+  expenses,
+}) {
+  const [showExpense, setShowExpense] = useState(true);
+  function toggle() {
+    setShowExpense(!showExpense);
+  }
   return (
     <>
       <Header />
@@ -20,9 +30,12 @@ export default function BudgetPage() {
           <MediumLineStyle className="MediumFontStyle2">
             Neue Ausgabe:
           </MediumLineStyle>
-          <PlusButton />
-          <Expenses />
-          {/* toggle={toggle}  */}
+          <PlusButton toggle={toggle} />
+          <Expenses
+            showExpense={showExpense}
+            addNewData={addNewData}
+            toggle={toggle}
+          />
         </TextWrapperStyle>
       </MainWrapper>
       <NavBar />

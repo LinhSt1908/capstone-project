@@ -102,8 +102,6 @@ export default function AddGuest({ showGuest, setShowGuest }) {
             id="notes"
             name="notes"
             rows={3}
-            placeholder="Bitte Allergien 
-            oder Unverträglichkeiten angeben"
           />
           <Button type="submit" className="MediumFontStyle">
             Speichern
@@ -117,7 +115,7 @@ export default function AddGuest({ showGuest, setShowGuest }) {
 const Fieldset = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
   margin: auto;
   margin-bottom: 5rem;
   padding: 1.5rem;
@@ -128,8 +126,12 @@ const Fieldset = styled.div`
 const InputTextArea = styled.textarea`
   display: flex;
   text-align: center;
+  align-items: center;
+  justify-content: center;
   background-color: #f9e4d4;
   width: 100%;
+  height: 78px;
+  padding-top: 32px;
   border: none;
   border-radius: 1em;
   box-shadow: inset 0.5em 0.5em 0.5em #ccb29e;
