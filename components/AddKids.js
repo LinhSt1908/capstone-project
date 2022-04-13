@@ -5,7 +5,7 @@ import { MinusButton } from "../components/ToDoInput";
 export default function AddKids() {
   const [count, setCount] = useState(0);
   function increment() {
-    //setCount(prevCount => prevCount+=1);
+    // setCount((prevCount) => (prevCount += 1));
     setCount(function (prevCount) {
       return (prevCount += 1);
     });
@@ -22,7 +22,7 @@ export default function AddKids() {
   }
 
   return (
-    <KidsContainer>
+    <KidsContainer className="MediumFontStyle">
       <PlusButton onClick={increment}>+</PlusButton>
       {count}
       <MinusButton onClick={decrement}>-</MinusButton>
