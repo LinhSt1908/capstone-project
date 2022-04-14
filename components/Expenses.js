@@ -2,12 +2,7 @@ import styled from "styled-components";
 import { Input } from "../components/InputFormHome";
 import { useForm } from "react-hook-form";
 
-export default function Expenses({
-  addNewData,
-  showExpense,
-  // toggle,
-  setShowExpense,
-}) {
+export default function Expenses({ addNewExpense, showExpense, toggle }) {
   const {
     register,
     handleSubmit,
@@ -16,9 +11,9 @@ export default function Expenses({
     formState: { errors },
   } = useForm();
   function onSubmit(data) {
-    addNewData(data);
+    addNewExpense(data);
     reset();
-    // toggle();
+    toggle();
   }
   return (
     <>
@@ -36,6 +31,7 @@ export default function Expenses({
               id="amount"
               name="amount"
               placeholder="0,00€"
+              {...register("amount")}
             />
             <Line></Line>
           </label>
@@ -46,6 +42,7 @@ export default function Expenses({
               type="text"
               id="description"
               name="description"
+              {...register("description")}
             />
           </label>
           <label className="MediumFontStyle" htmlFor="Category">
@@ -56,6 +53,7 @@ export default function Expenses({
               id="category"
               name="category"
               placeholder="z.B. Floristik, Bekleidung etc."
+              {...register("category")}
             />
           </label>
           <label className="MediumFontStyle" htmlFor="Notes">

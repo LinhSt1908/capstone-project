@@ -35,7 +35,7 @@ export default function AddFacts({ addNewData, showMe, toggle }) {
             required
             {...register("brideName")}
           />
-          <label className="MediumFontStyle" htmlFor="grooName">
+          <label className="MediumFontStyle" htmlFor="groomName">
             Name des Bräutigams
           </label>
           <Input
