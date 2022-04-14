@@ -7,12 +7,7 @@ import Expenses from "../components/Expenses";
 import { Line } from "../pages/index";
 import { useState } from "react";
 
-export default function BudgetPage({
-  addNewData,
-  formData,
-  addNewExpenses,
-  expenses,
-}) {
+export default function BudgetPage({ addNewExpense, newExpense }) {
   const [showExpense, setShowExpense] = useState(true);
   function toggle() {
     setShowExpense(!showExpense);
@@ -26,14 +21,38 @@ export default function BudgetPage({
             Budget & Ausgaben
           </BigLineStyle>
           <Line></Line>
+
           <TotalBudget />
           <MediumLineStyle className="MediumFontStyle2">
             Neue Ausgabe:
+            <GuestContainer>
+              <StyledDiv>
+                <FirstContainer>
+                  {newExpense ? (
+                    <p className="MediumFontStyle">{newExpense.description}</p>
+                  ) : (
+                    <p>{""}</p>
+                  )}
+                  {newExpense ? (
+                    <p className="SmallFontStyle">{newExpense.category}</p>
+                  ) : (
+                    <p>{""}</p>
+                  )}
+                </FirstContainer>
+                <SecondContainer>
+                  {newExpense ? (
+                    <p className="MediumFontStyle">{newExpense.amount}</p>
+                  ) : (
+                    <p>{""}</p>
+                  )}
+                </SecondContainer>
+              </StyledDiv>
+            </GuestContainer>
           </MediumLineStyle>
           <PlusButton toggle={toggle} />
           <Expenses
             showExpense={showExpense}
-            addNewData={addNewData}
+            addNewExpense={addNewExpense}
             toggle={toggle}
           />
         </TextWrapperStyle>
@@ -50,6 +69,7 @@ const MainWrapper = styled.main`
 
 const TextWrapperStyle = styled.div`
   text-align: center;
+  margin-bottom: 2.5rem;
 `;
 
 const BigLineStyle = styled.div`
@@ -57,5 +77,39 @@ const BigLineStyle = styled.div`
 `;
 
 const MediumLineStyle = styled.div`
-  margin-bottom: 0.5em;
+  margin-bottom: 0.5 em;
+`;
+
+const GuestContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  width: 90%;
+`;
+
+const StyledDiv = styled.div`
+  background-color: #efdad7;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+const FirstContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const SecondContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;

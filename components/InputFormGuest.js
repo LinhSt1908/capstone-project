@@ -5,7 +5,7 @@ import { AddGuestInput } from "./AddGuestInput";
 import { Button } from "../components/InputFormHome";
 import { Input } from "../components/InputFormHome";
 
-export default function AddGuest({ showGuest, setShowGuest }) {
+export default function AddGuest({ addNewGuest, showGuest, toggle }) {
   const {
     control,
     register,
@@ -20,10 +20,13 @@ export default function AddGuest({ showGuest, setShowGuest }) {
     append: addGuestAppend,
     remove: addGuestRemove,
   } = useFieldArray({ control, name: "addGuestArray" });
-  const watchAddGuestArray = watch("addGuestArray");
+
+  // const watchAddGuestArray = watch("addGuestArray");
 
   function onSubmit(data) {
-    addNewData(data);
+    addNewGuest(data);
+    reset();
+    toggle();
   }
 
   return (
@@ -44,16 +47,10 @@ export default function AddGuest({ showGuest, setShowGuest }) {
             id="firstName"
             name="firstName"
             required
-            placeholder="Vorname"
+            placeholder="Vor- und Nachname"
+            {...register("name")}
           />
-          <Input
-            className="SmallFontStyle"
-            type="text"
-            id="lastName"
-            name="lastName"
-            required
-            placeholder="Nachname"
-          />
+
           <InputTextArea
             className="SmallFontStyle"
             type="text"
@@ -62,6 +59,7 @@ export default function AddGuest({ showGuest, setShowGuest }) {
             required
             rows={3}
             placeholder="Anschrift"
+            // {...register("address")}
           />
           <p className="MediumFontStyle">Begleitpersonen</p>
           <AddButton>
@@ -76,6 +74,7 @@ export default function AddGuest({ showGuest, setShowGuest }) {
               index={index}
               addGuestRemove={addGuestRemove}
               key={item.id}
+              type="text"
             />
           ))}
           <FlexContainer>
@@ -92,6 +91,7 @@ export default function AddGuest({ showGuest, setShowGuest }) {
             name="group"
             placeholder="z.B. Freunde der Braut"
             required
+            // {...register("group")}
           />
           <label className="MediumFontStyle" htmlFor="notes">
             Anmerkungen
