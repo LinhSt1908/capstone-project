@@ -40,6 +40,7 @@ export default function BudgetPage({ addNewExpense, newExpense }) {
                   )}
                 </div>
               </BudgetContainer>
+              <ThinLine></ThinLine>
               <EditDeleteDiv>
                 <Image src={editIcon2} alt="Edit" width={25} height={25} />
                 <Image src={deleteIcon} alt="Delete" width={25} height={25} />
@@ -95,10 +96,19 @@ const BudgetContainer = styled.div`
   width: 100%;
 `;
 
+export const ThinLine = styled.p`
+  color: #6c4a4a;
+  border-bottom: 1px solid;
+  width: 80%;
+  padding-top: 0.7rem;
+  margin: auto;
+`;
+
 const EditDeleteDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 0.5rem;
+  margin-top: 0.7rem;
 `;

@@ -9,6 +9,7 @@ import editIcon2 from "../public/icons/editIcon2.svg";
 import { Line } from "../pages/index";
 import { useState } from "react";
 import Image from "next/image";
+import { ThinLine } from "../pages/budgetpage";
 
 export default function GuestPage({ addNewGuest, newGuest }) {
   const [showGuest, setShowGuest] = useState(true);
@@ -30,6 +31,7 @@ export default function GuestPage({ addNewGuest, newGuest }) {
                 <p className="MediumFontStyle2">
                   {newGuest.addGuestArray[0].newAddGuestItem}
                 </p>
+                <ThinLine></ThinLine>
                 <EditDeleteDiv>
                   <Image src={editIcon2} alt="Edit" width={25} height={25} />
                   <Image src={deleteIcon} alt="Delete" width={25} height={25} />
@@ -101,4 +103,5 @@ const EditDeleteDiv = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding: 0.5rem;
+  margin-top: 0.7rem;
 `;
