@@ -23,7 +23,7 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <BigLineStyleA className="BigFontStyle">
+          <HeadingNames className="BigFontStyle">
             {formData === null ? (
               <p>Ihr Name & Sein Name </p>
             ) : (
@@ -31,9 +31,9 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
                 {formData.brideName} & {formData.groomName}
               </p>
             )}
-          </BigLineStyleA>
+          </HeadingNames>
           <Line></Line>
-          <MediumLineStyle className="MediumFontStyle2">
+          <HeadingFacts className="MediumFontStyle2">
             {formData === null ? <p>XX.XX.XXXX</p> : <p>{formData.date}</p>}
             {formData === null ? (
               <p>Ort, Beginn</p>
@@ -43,15 +43,15 @@ export default function Home({ addNewData, formData, addNewToDos, toDos }) {
               </p>
             )}
             <EditButton toggle={toggle} />
-          </MediumLineStyle>
+          </HeadingFacts>
           <InputFormHome
             showMe={showMe}
             addNewData={addNewData}
             toggle={toggle}
           />
-          <BigLineStyleB className="BigFontStyle">
+          <HeadingToDos className="BigFontStyle">
             <p>Eure wichtigsten To-Do´s</p>
-          </BigLineStyleB>
+          </HeadingToDos>
           <Line></Line>
 
           <CreateToDo addNewToDos={addNewToDos} toDos={toDos} />
@@ -72,11 +72,11 @@ const TextWrapperStyle = styled.div`
   text-align: center;
 `;
 
-const BigLineStyleA = styled.div`
+const HeadingNames = styled.div`
   margin-top: 3.5em;
 `;
 
-const BigLineStyleB = styled.div`
+const HeadingToDos = styled.div`
   margin-top: 3rem;
 `;
 
@@ -89,6 +89,6 @@ export const Line = styled.p`
   margin-top: 0.5rem;
 `;
 
-const MediumLineStyle = styled.div`
+const HeadingFacts = styled.div`
   margin-bottom: 0.5rem;
 `;

@@ -21,9 +21,7 @@ export default function GuestPage({ addNewGuest, newGuest }) {
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <BigLineStyle className="BigFontStyle">
-            Familie & Freunde
-          </BigLineStyle>
+          <Heading className="BigFontStyle">Familie & Freunde</Heading>
           <Line></Line>
           <StyledDiv>
             {newGuest && (
@@ -69,7 +67,7 @@ const TextWrapperStyle = styled.div`
   text-align: center;
 `;
 
-const BigLineStyle = styled.div`
+const Heading = styled.div`
   margin-top: 3em;
 `;
 

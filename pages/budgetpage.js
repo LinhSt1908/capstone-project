@@ -20,33 +20,31 @@ export default function BudgetPage({ addNewExpense, newExpense }) {
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <BigLineStyle className="BigFontStyle">
-            Budget & Ausgaben
-          </BigLineStyle>
+          <Heading className="BigFontStyle">Budget & Ausgaben</Heading>
           <Line></Line>
 
           <TotalBudget />
-          <MediumLineStyle className="MediumFontStyle2">
+          <HeadingExpense className="MediumFontStyle2">
             Neue Ausgabe:
-          </MediumLineStyle>
+          </HeadingExpense>
           {newExpense && (
-            <BudgetContainer>
-              <FirstSecondContainer>
-                <FirstDiv>
+            <TotalContainer>
+              <BudgetContainer>
+                <div>
                   <p className="MediumFontStyle2">{newExpense.description}</p>
                   <p className="SmallFontStyle">{newExpense.category}</p>
-                </FirstDiv>
-                <SecondDiv>
+                </div>
+                <div>
                   {newExpense && (
                     <p className="MediumFontStyle2">{newExpense.amount}</p>
                   )}
-                </SecondDiv>
-              </FirstSecondContainer>
+                </div>
+              </BudgetContainer>
               <EditDeleteDiv>
                 <Image src={editIcon2} alt="Edit" width={25} height={25} />
                 <Image src={deleteIcon} alt="Delete" width={25} height={25} />
               </EditDeleteDiv>
-            </BudgetContainer>
+            </TotalContainer>
           )}
 
           <PlusButton toggle={toggle} />
@@ -72,15 +70,15 @@ const TextWrapperStyle = styled.div`
   margin-bottom: 2.5rem;
 `;
 
-const BigLineStyle = styled.div`
+const Heading = styled.div`
   margin-top: 3em;
 `;
 
-const MediumLineStyle = styled.div`
+const HeadingExpense = styled.h1`
   margin-bottom: 0.5 em;
 `;
 
-const BudgetContainer = styled.div`
+const TotalContainer = styled.div`
   width: 95%;
   background-color: #efdad7;
   border-radius: 1rem;
@@ -89,19 +87,11 @@ const BudgetContainer = styled.div`
   padding: 0.5rem;
 `;
 
-const FirstSecondContainer = styled.div`
+const BudgetContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
-`;
-
-const FirstDiv = styled.div`
-  width: 100%;
-`;
-
-const SecondDiv = styled.div`
   width: 100%;
 `;
 
