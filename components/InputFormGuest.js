@@ -21,8 +21,6 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
     remove: addGuestRemove,
   } = useFieldArray({ control, name: "addGuestArray" });
 
-  // const watchAddGuestArray = watch("addGuestArray");
-
   function onSubmit(data) {
     addNewGuest(data);
     reset();
