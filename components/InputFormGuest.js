@@ -59,7 +59,6 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
             required
             rows={3}
             placeholder="Anschrift"
-            // {...register("address")}
           />
           <p className="MediumFontStyle">Begleitpersonen</p>
           <AddButton>
@@ -91,7 +90,6 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
             name="group"
             placeholder="z.B. Freunde der Braut"
             required
-            // {...register("group")}
           />
           <label className="MediumFontStyle" htmlFor="notes">
             Anmerkungen

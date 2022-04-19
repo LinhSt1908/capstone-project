@@ -3,8 +3,12 @@ import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import InputFormGuest from "../components/InputFormGuest";
 import PlusButton from "../components/Buttons/PlusButton";
+import arrowRightIcon from "../public/icons/arrowRightIcon.svg";
+import deleteIcon from "../public/icons/deleteIcon.svg";
+import editIcon2 from "../public/icons/editIcon2.svg";
 import { Line } from "../pages/index";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function GuestPage({ addNewGuest, newGuest }) {
   const [showGuest, setShowGuest] = useState(true);
@@ -23,28 +27,23 @@ export default function GuestPage({ addNewGuest, newGuest }) {
           <Line></Line>
           <GuestContainer>
             <StyledDiv>
-              {newGuest ? (
-                <p className="MediumFontStyle">{newGuest.name}</p>
-              ) : (
-                <p>{""}</p>
+              {newGuest && (
+                <div>
+                  <p className="MediumFontStyle">{newGuest.name}</p>
+                  <p className="MediumFontStyle">
+                    {newGuest.addGuestArray[0].newAddGuestItem}
+                  </p>
+                </div>
               )}
-              {newGuest ? (
-                <p className="MediumFontStyle">{newGuest.companion}</p>
-              ) : (
-                <p>{""}</p>
-              )}
-              {/* {newGuest ? (
-                <p className="MediumFontStyle">{newGuest.address}</p>
-              ) : (
-                <p>{""}</p>
-              )}
-              {newGuest ? (
-                <p className="MediumFontStyle">{newGuest.group}</p>
-              ) : (
-                <p>{""}</p>
-              )} */}
             </StyledDiv>
+            {/* <StatusDiv>
+              <Image src={arrowRightIcon} alt="Arrow" width={25} height={25} />
+            </StatusDiv> */}
           </GuestContainer>
+          {/* <EditDeleteDiv>
+            <Image src={editIcon2} alt="Edit" width={25} height={25} />
+            <Image src={deleteIcon} alt="Delete" width={25} height={25} />
+          </EditDeleteDiv> */}
           <PlusButton toggle={toggle} />
           <InputFormGuest
             addNewGuest={addNewGuest}
@@ -71,23 +70,38 @@ const BigLineStyle = styled.div`
   margin-top: 3em;
 `;
 
+// event. export zu budgetpage
 const GuestContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  border: none;
   width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #efdad7;
+  border-radius: 1rem 1rem 0 0;
+  border: none;
+  margin: 2rem auto 0 auto;
 `;
 
 const StyledDiv = styled.div`
-  background-color: #efdad7;
-  width: 100%;
+  width: 90%;
   border: none;
-  border-radius: 1rem;
   text-align: center;
   padding: 0.5rem;
-  margin: auto;
 `;
+
+// const StatusDiv = styled.div`
+//   width: 90%;
+// `;
+
+// const EditDeleteDiv = styled.div`
+//   width: 90%;
+//   display: flex;
+
+//   justify-content: space-evenly;
+//   align-items: center;
+//   background-color: #efdad7;
+//   border: none;
+//   border-radius: 0 0 1rem 1rem;
+//   margin: 0 auto 1.5rem auto;
+//   padding: 0.5rem;
+// `;

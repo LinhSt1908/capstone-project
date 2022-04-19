@@ -15,7 +15,6 @@ export const AddGuestInput = ({ register, index, addGuestRemove }) => {
             type="text"
             id="companion"
             name="companion"
-            {...register("companion")}
             {...register(`addGuestArray.${index}.newAddGuestItem`)}
           />
           <MinusButton type="button" onClick={() => addGuestRemove(index)}>

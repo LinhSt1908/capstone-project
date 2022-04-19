@@ -13,6 +13,7 @@ export const ToDoInput = ({ register, index, toDoRemove }) => {
         <Input
           className="SmallFontStyle"
           type="text"
+          minLength={5}
           {...register(`toDoArray.${index}.newToDoItem`)}
         />
         <MinusButton type="button" onClick={() => toDoRemove(index)}>

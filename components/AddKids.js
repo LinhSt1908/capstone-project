@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { MinusButton } from "../components/ToDoInput";
-// import { motion, AnimatePresence } from "framer-motion";
 
 export default function AddKids() {
   const [count, setCount] = useState(0);
@@ -25,22 +24,6 @@ export default function AddKids() {
   return (
     <>
       <KidsContainer className="MediumFontStyle">
-        {/* <AnimatePresence>
-          <motion.strong
-            style={{
-              display: "inline-block",
-              padding: "0 0.5ch",
-              width: "2ch",
-            }}
-            initial={{ y: -20, opacity: 0, position: "absolute" }}
-            animate={{ y: 0, opacity: 1, position: "static" }}
-            exit={{ y: 20, opacity: 0, position: "absolute" }}
-            key={currentQuestion?.remaining}
-          >
-            {currentQuestion?.remaining}
-          </motion.strong>
-          {""}
-        </AnimatePresence> */}
         <PlusButton onClick={increment}>+</PlusButton>
         {count}
         <MinusButton onClick={decrement}>-</MinusButton>

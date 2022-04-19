@@ -20,7 +20,7 @@ const HeaderWrapperStyle = styled.div`
   right: 0;
   width: 100%;
   height: 6rem;
-  background-color: #ff928b;
+  background-image: linear-gradient(to top, #ff928b 27%, #f5efef 100%);
 `;
 
 const ImageStyle = styled.div`

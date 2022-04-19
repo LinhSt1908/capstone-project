@@ -36,7 +36,7 @@ const NavWrapperStyle = styled.div`
   bottom: 0;
   right: 0;
   margin: auto;
-  background-color: #ff928b;
+  background-image: linear-gradient(to top, #ff928b 27%, #f5efef 100%);
   display: flex;
   justify-content: space-evenly;
   cursor: pointer;

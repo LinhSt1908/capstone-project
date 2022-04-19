@@ -25,30 +25,29 @@ export default function BudgetPage({ addNewExpense, newExpense }) {
           <TotalBudget />
           <MediumLineStyle className="MediumFontStyle2">
             Neue Ausgabe:
-            <GuestContainer>
-              <StyledDiv>
-                <FirstContainer>
-                  {newExpense ? (
-                    <p className="MediumFontStyle">{newExpense.description}</p>
-                  ) : (
-                    <p>{""}</p>
-                  )}
-                  {newExpense ? (
-                    <p className="SmallFontStyle">{newExpense.category}</p>
-                  ) : (
-                    <p>{""}</p>
-                  )}
-                </FirstContainer>
-                <SecondContainer>
-                  {newExpense ? (
-                    <p className="MediumFontStyle">{newExpense.amount}</p>
-                  ) : (
-                    <p>{""}</p>
-                  )}
-                </SecondContainer>
-              </StyledDiv>
-            </GuestContainer>
           </MediumLineStyle>
+          <GuestContainer>
+            <FirstContainer>
+              {newExpense ? (
+                <p className="MediumFontStyle">{newExpense.description}</p>
+              ) : (
+                <p>{""}</p>
+              )}
+              {newExpense ? (
+                <p className="SmallFontStyle">{newExpense.category}</p>
+              ) : (
+                <p>{""}</p>
+              )}
+            </FirstContainer>
+            <SecondContainer>
+              {newExpense ? (
+                <p className="MediumFontStyle">{newExpense.amount}</p>
+              ) : (
+                <p>{""}</p>
+              )}
+            </SecondContainer>
+          </GuestContainer>
+
           <PlusButton toggle={toggle} />
           <Expenses
             showExpense={showExpense}
@@ -81,35 +80,23 @@ const MediumLineStyle = styled.div`
 `;
 
 const GuestContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  margin: auto;
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  border: none;
   width: 90%;
-`;
-
-const StyledDiv = styled.div`
-  background-color: #efdad7;
-  width: 100%;
-  border: none;
-  border-radius: 1rem;
-  text-align: center;
-  padding: 0.5rem;
-  margin: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-color: #efdad7;
+  border-radius: 1rem;
+  border: none;
+  margin: 2rem auto 1.5rem auto;
 `;
 
 const FirstContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  width: 90%;
+  border: none;
+  text-align: center;
+  padding: 0.5rem;
 `;
 
 const SecondContainer = styled.div`
-  display: flex;
-  flex-direction: row;
+  width: 90%;
 `;
