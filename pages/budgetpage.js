@@ -6,6 +6,9 @@ import TotalBudget from "../components/TotalBudget";
 import Expenses from "../components/Expenses";
 import { Line } from "../pages/index";
 import { useState } from "react";
+import deleteIcon from "../public/icons/deleteIcon.svg";
+import editIcon2 from "../public/icons/editIcon2.svg";
+import Image from "next/image";
 
 export default function BudgetPage({ addNewExpense, newExpense }) {
   const [showExpense, setShowExpense] = useState(true);
@@ -26,27 +29,25 @@ export default function BudgetPage({ addNewExpense, newExpense }) {
           <MediumLineStyle className="MediumFontStyle2">
             Neue Ausgabe:
           </MediumLineStyle>
-          <GuestContainer>
-            <FirstContainer>
-              {newExpense ? (
-                <p className="MediumFontStyle">{newExpense.description}</p>
-              ) : (
-                <p>{""}</p>
-              )}
-              {newExpense ? (
-                <p className="SmallFontStyle">{newExpense.category}</p>
-              ) : (
-                <p>{""}</p>
-              )}
-            </FirstContainer>
-            <SecondContainer>
-              {newExpense ? (
-                <p className="MediumFontStyle">{newExpense.amount}</p>
-              ) : (
-                <p>{""}</p>
-              )}
-            </SecondContainer>
-          </GuestContainer>
+          {newExpense && (
+            <BudgetContainer>
+              <FirstSecondContainer>
+                <FirstDiv>
+                  <p className="MediumFontStyle2">{newExpense.description}</p>
+                  <p className="SmallFontStyle">{newExpense.category}</p>
+                </FirstDiv>
+                <SecondDiv>
+                  {newExpense && (
+                    <p className="MediumFontStyle2">{newExpense.amount}</p>
+                  )}
+                </SecondDiv>
+              </FirstSecondContainer>
+              <EditDeleteDiv>
+                <Image src={editIcon2} alt="Edit" width={25} height={25} />
+                <Image src={deleteIcon} alt="Delete" width={25} height={25} />
+              </EditDeleteDiv>
+            </BudgetContainer>
+          )}
 
           <PlusButton toggle={toggle} />
           <Expenses
@@ -79,24 +80,35 @@ const MediumLineStyle = styled.div`
   margin-bottom: 0.5 em;
 `;
 
-const GuestContainer = styled.div`
-  width: 90%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+const BudgetContainer = styled.div`
+  width: 95%;
   background-color: #efdad7;
   border-radius: 1rem;
   border: none;
-  margin: 2rem auto 1.5rem auto;
-`;
-
-const FirstContainer = styled.div`
-  width: 90%;
-  border: none;
-  text-align: center;
+  margin: 1rem auto 0 auto;
   padding: 0.5rem;
 `;
 
-const SecondContainer = styled.div`
-  width: 90%;
+const FirstSecondContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
+
+const FirstDiv = styled.div`
+  width: 100%;
+`;
+
+const SecondDiv = styled.div`
+  width: 100%;
+`;
+
+const EditDeleteDiv = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.5rem;
 `;
