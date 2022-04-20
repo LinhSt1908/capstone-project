@@ -4,7 +4,7 @@ import { Button } from "../components/InputFormHome";
 export default function TotalBudget() {
   return (
     <>
-      <form>
+      <form autoComplete="off">
         <Fieldset>
           <FlexContainerA>
             <label className="MediumFontStyle" htmlFor="totalBudget">

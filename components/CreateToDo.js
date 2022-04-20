@@ -48,7 +48,7 @@ export default function InputFieldHome({
       ) : (
         ""
       )}
-      <form onSubmit={handleSubmit(onToDoSubmit)}>
+      <form onSubmit={handleSubmit(onToDoSubmit)} autoComplete="off">
         <FlexContainer>
           <PlusButtonContainer>
             <p className="MediumFontStyle">Hinzufügen</p>

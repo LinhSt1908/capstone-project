@@ -3,19 +3,36 @@ import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import InputFormGuest from "../components/InputFormGuest";
 import PlusButton from "../components/Buttons/PlusButton";
-import arrowRightIcon from "../public/icons/arrowRightIcon.svg";
-import deleteIcon from "../public/icons/deleteIcon.svg";
-import editIcon2 from "../public/icons/editIcon2.svg";
+import { MinusButton } from "../components/ToDoInput";
 import { Line } from "../pages/index";
 import { useState } from "react";
-import Image from "next/image";
+import { useFieldArray, useForm } from "react-hook-form";
 import { ThinLine } from "../pages/budgetpage";
 
-export default function GuestPage({ addNewGuest, newGuest }) {
+export default function GuestPage({
+  addNewGuest,
+  newGuest,
+  // index,
+  // guestEntryRemove,
+}) {
+  const {
+    control,
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
   const [showGuest, setShowGuest] = useState(true);
   function toggle() {
     setShowGuest(!showGuest);
   }
+
+  // const {
+  //   fields: guestEntryFields,
+  //   append: guestEntryAppend,
+  //   remove: guestEntryRemove,
+  // } = useFieldArray({ control, name: "guestEntryArray" });
 
   return (
     <>
@@ -24,29 +41,46 @@ export default function GuestPage({ addNewGuest, newGuest }) {
         <TextWrapperStyle>
           <Heading className="BigFontStyle">Familie & Freunde</Heading>
           <Line></Line>
-          <StyledDiv>
-            {newGuest && (
-              <GuestContainer>
-                <p className="MediumFontStyle2">{newGuest.name}</p>
-                <p className="MediumFontStyle2">
-                  {newGuest.addGuestArray[0].newAddGuestItem}
-                </p>
-                <ThinLine></ThinLine>
-                <EditDeleteDiv>
-                  <Image src={editIcon2} alt="Edit" width={25} height={25} />
-                  <Image src={deleteIcon} alt="Delete" width={25} height={25} />
-                </EditDeleteDiv>
-              </GuestContainer>
-            )}
-            {/* <StatusDiv>
-              <Image
-                src={arrowRightIcon}
-                alt="Arrow"
-                width={25}
-                height={25}
-              />
-            </StatusDiv> */}
-          </StyledDiv>
+          {newGuest && (
+            // {guestEntryFields.map((item, index) => (
+            <GuestContainer
+            // register={register}
+            // watch={watch}
+            // index={index}
+            // guestEntryRemove={guestEntryRemove}
+            // key={item.id}
+            >
+              <p className="MediumFontStyle2">{newGuest.name}</p>
+              <p className="MediumFontStyle2">
+                {newGuest.addGuestArray[0].newAddGuestItem}
+              </p>
+              <p className="MediumFontStyle2">
+                {newGuest.addGuestArray[1].newAddGuestItem}
+              </p>
+              <p className="SmallFontStyle">{newGuest.group}</p>
+              <ThinLine></ThinLine>
+              <EditDeleteDiv>
+                <EditButton type="button">
+                  <svg
+                    fill="#FFFFFF"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 32 32"
+                    width="17px"
+                    height="17px"
+                  >
+                    <path d="M 23.90625 3.96875 C 22.859375 3.96875 21.8125 4.375 21 5.1875 L 5.1875 21 L 5.125 21.3125 L 4.03125 26.8125 L 3.71875 28.28125 L 5.1875 27.96875 L 10.6875 26.875 L 11 26.8125 L 26.8125 11 C 28.4375 9.375 28.4375 6.8125 26.8125 5.1875 C 26 4.375 24.953125 3.96875 23.90625 3.96875 Z M 23.90625 5.875 C 24.410156 5.875 24.917969 6.105469 25.40625 6.59375 C 26.378906 7.566406 26.378906 8.621094 25.40625 9.59375 L 24.6875 10.28125 L 21.71875 7.3125 L 22.40625 6.59375 C 22.894531 6.105469 23.402344 5.875 23.90625 5.875 Z M 20.3125 8.71875 L 23.28125 11.6875 L 11.1875 23.78125 C 10.53125 22.5 9.5 21.46875 8.21875 20.8125 Z M 6.9375 22.4375 C 8.136719 22.921875 9.078125 23.863281 9.5625 25.0625 L 6.28125 25.71875 Z" />
+                  </svg>
+                </EditButton>
+                <MinusButton
+                  type="button"
+                  onClick={() => guestEntryRemove(index)}
+                >
+                  -
+                </MinusButton>
+              </EditDeleteDiv>
+            </GuestContainer>
+            // ))}
+          )}
           <PlusButton toggle={toggle} />
           <InputFormGuest
             addNewGuest={addNewGuest}
@@ -73,7 +107,6 @@ const Heading = styled.div`
   margin-top: 3em;
 `;
 
-// event. export zu budgetpage
 const GuestContainer = styled.div`
   width: 95%;
   display: flex;
@@ -87,21 +120,31 @@ const GuestContainer = styled.div`
   padding: 0.5rem;
 `;
 
-const StyledDiv = styled.div`
-  width: 100%;
-  border: none;
-  text-align: center;
+export const EditButton = styled.button`
+  background: rgb(245, 180, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(245, 180, 36, 1) 0%,
+    rgba(255, 208, 56, 1) 100%
+  );
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0px 0px 0px 5px #ffd038;
+  color: white;
+  cursor: pointer;
+  &:active {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
 `;
 
-// const StatusDiv = styled.div`
-//   width: 90%;
-// `;
-
+//export zu budgetpage
 const EditDeleteDiv = styled.div`
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
   padding: 0.5rem;
-  margin-top: 0.7rem;
+  margin: 0.7rem auto 0 auto;
 `;

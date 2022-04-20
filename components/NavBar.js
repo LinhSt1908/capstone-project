@@ -4,6 +4,7 @@ import Link from "next/link";
 import homeIcon from "../public/icons/homeIcon.svg";
 import guestIcon from "../public/icons/guestIcon.svg";
 import budgetIcon from "../public/icons/budgetIcon.svg";
+import clothesIcon from "../public/icons/clothesIcon.svg";
 
 function NavBar() {
   return (
@@ -23,6 +24,11 @@ function NavBar() {
           <Image src={budgetIcon} alt="Budget" width={35} height={35} />
         </Link>
       </IconStyle>
+      <IconStyle>
+        <Link href="/clothespage" passHref>
+          <Image src={clothesIcon} alt="Clothes" width={35} height={35} />
+        </Link>
+      </IconStyle>
     </NavWrapperStyle>
   );
 }
@@ -39,17 +45,16 @@ const NavWrapperStyle = styled.div`
   background-image: linear-gradient(to top, #ff928b 27%, #f5efef 100%);
   display: flex;
   justify-content: space-evenly;
-  cursor: pointer;
 `;
 
 const IconStyle = styled.div`
   box-sizing: border-box;
-
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   display: flex;
+  cursor: pointer;
   &:active {
     border-top: 5px solid #6c4a4a;
   }
