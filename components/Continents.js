@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Image from "next/image";
-import africaIcon1 from "../public/icons/africaIcon1.svg";
-import americaIcon2 from "../public/icons/americaIcon2.svg";
-import asiaIcon6 from "../public/icons/asiaIcon6.svg";
-import europeIcon1 from "../public/icons/europeIcon1.svg";
+import africa from "../public/icons/africa.svg";
+import america from "../public/icons/america.svg";
+import asia from "../public/icons/asia.svg";
+import europe from "../public/icons/europe.svg";
 import Link from "next/link";
 
 export default function Continents() {
@@ -12,22 +12,22 @@ export default function Continents() {
       <Link href="/africa" passHref>
         <Button className="MediumFontStyle2">Afrika</Button>
       </Link>
-      <Image src={africaIcon1} alt="Africa" />
+      <Image src={africa} alt="Africa" />
 
       <Link href="/america" passHref>
         <Button className="MediumFontStyle2">Amerika</Button>
       </Link>
-      <Image src={americaIcon2} alt="America" />
+      <Image src={america} alt="America" />
 
       <Link href="/asia" passHref>
         <Button className="MediumFontStyle2">Asien</Button>
       </Link>
-      <Image src={asiaIcon6} alt="Asia" />
+      <Image src={asia} alt="Asia" />
 
       <Link href="/europe" passHref>
         <Button className="MediumFontStyle2">Europa</Button>
       </Link>
-      <Image src={europeIcon1} alt="Europe" />
+      <Image src={europe} alt="Europe" />
     </>
   );
 }
