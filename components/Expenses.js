@@ -18,6 +18,7 @@ export default function Expenses({ addNewExpense, showExpense, toggle }) {
   return (
     <>
       <form
+        // autoComplete="off"
         style={{
           display: showExpense ? "block" : "none",
         }}

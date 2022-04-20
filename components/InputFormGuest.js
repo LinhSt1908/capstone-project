@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useFieldArray, useForm } from "react-hook-form";
-import AddKids from "./AddKids";
 import { AddGuestInput } from "./AddGuestInput";
 import { Button } from "../components/InputFormHome";
 import { Input } from "../components/InputFormHome";
@@ -30,6 +29,7 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
   return (
     <>
       <form
+        // autoComplete="off"
         style={{
           display: showGuest ? "block" : "none",
         }}
@@ -54,8 +54,8 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
             type="text"
             id="address"
             name="address"
-            required
             rows={3}
+            required
             placeholder="Anschrift"
           />
           <p className="MediumFontStyle">Begleitpersonen</p>
@@ -75,8 +75,8 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
             />
           ))}
           <FlexContainer>
-            <StyledDiv className="SmallFontStyle">Kinder</StyledDiv>
-            <AddKids />
+            {/* <StyledDiv className="SmallFontStyle">Kinder</StyledDiv>
+            <AddKids /> */}
           </FlexContainer>
           <label className="MediumFontStyle" htmlFor="group">
             Gruppe
@@ -86,8 +86,9 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
             type="text"
             id="group"
             name="group"
-            placeholder="z.B. Freunde der Braut"
             required
+            placeholder="z.B. Freunde der Braut"
+            {...register("group")}
           />
           <label className="MediumFontStyle" htmlFor="notes">
             Anmerkungen
@@ -172,6 +173,7 @@ const PlusButton = styled.button`
   box-shadow: 0 0 0 0.3rem #ffd038;
   color: white;
   font-size: 1rem;
+  cursor: pointer;
   &:active {
     width: 1.7rem;
     height: 1.7rem;
