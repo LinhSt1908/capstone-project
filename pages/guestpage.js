@@ -54,9 +54,6 @@ export default function GuestPage({
               <p className="MediumFontStyle2">
                 {newGuest.addGuestArray[0].newAddGuestItem}
               </p>
-              <p className="MediumFontStyle2">
-                {newGuest.addGuestArray[1].newAddGuestItem}
-              </p>
               <p className="SmallFontStyle">{newGuest.group}</p>
               <ThinLine></ThinLine>
               <EditDeleteDiv>

@@ -31,7 +31,7 @@ export default function America() {
           <Mexico>
             <Image src={mexico} alt="Mexico" width={280} height={400} />
             <TotalContainer className="SmallFontStyle">
-              Was wird als Symbol für Unterstützung und Verantwortung als Paar
+              Was wird als Symbol für Unterstützung und Verantwortung in der Ehe
               betrachtet?
               <ChoiceContainer>
                 <Choice>A) Lasso</Choice> <Choice>B) Armbänder</Choice>

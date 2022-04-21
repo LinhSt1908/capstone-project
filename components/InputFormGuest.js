@@ -74,10 +74,7 @@ export default function AddGuest({ addNewGuest, showGuest, toggle }) {
               type="text"
             />
           ))}
-          <FlexContainer>
-            {/* <StyledDiv className="SmallFontStyle">Kinder</StyledDiv>
-            <AddKids /> */}
-          </FlexContainer>
+          <FlexContainer></FlexContainer>
           <label className="MediumFontStyle" htmlFor="group">
             Gruppe
           </label>
@@ -139,17 +136,6 @@ const AddButton = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   margin: 0.5rem;
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ceab93;
-  height: 2.5rem;
-  width: 55%;
-  border: none;
-  border-radius: 1em;
 `;
 
 const FlexContainer = styled.div`
