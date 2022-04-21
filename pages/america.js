@@ -3,9 +3,23 @@ import NavBar from "../components/NavBar";
 import styled from "styled-components";
 import { Line } from "../pages/index";
 import Image from "next/image";
+import { useState } from "react";
 import mexico from "../public/icons/mexico.jpeg";
+import { CountryDiv } from "./africa";
+import { TotalContainer } from "./africa";
+import { Choice } from "./africa";
+import { Button } from "./africa";
+import { ChoiceContainer } from "./africa";
 
 export default function America() {
+  const [showAnswer, setShowAnswer] = useState(false);
+  function toggle() {
+    setShowAnswer(!showAnswer);
+  }
+
+  function onClick(data) {
+    toggle();
+  }
   return (
     <>
       <Header />
@@ -13,9 +27,28 @@ export default function America() {
         <TextWrapperStyle>
           <Heading className="BigFontStyle">Amerika</Heading>
           <Line></Line>
-          <Button className="MediumFontStyle2">Mexiko</Button>
+          <CountryDiv className="MediumFontStyle2">Mexiko</CountryDiv>
           <Mexico>
-            <Image src={mexico} alt="Mexico" width={380} height={500} />
+            <Image src={mexico} alt="Mexico" width={280} height={400} />
+            <TotalContainer className="SmallFontStyle">
+              Was wird als Symbol für Unterstützung und Verantwortung als Paar
+              betrachtet?
+              <ChoiceContainer>
+                <Choice>A) Lasso</Choice> <Choice>B) Armbänder</Choice>
+                <Choice>C) Schal</Choice>
+              </ChoiceContainer>
+              <Button className="MediumFontStyle" onClick={toggle}>
+                Antwort
+              </Button>
+              <p
+                className="MediumFontStyle2"
+                style={{
+                  display: showAnswer ? "block" : "none",
+                }}
+              >
+                A)! 🎉
+              </p>
+            </TotalContainer>
           </Mexico>
         </TextWrapperStyle>
       </MainWrapper>
@@ -36,22 +69,6 @@ const TextWrapperStyle = styled.div`
 
 const Heading = styled.div`
   margin-top: 3em;
-`;
-
-const Button = styled.div`
-  background-color: #f9e4d4;
-  border-radius: 1rem;
-  border-color: #6c4a4a;
-  padding: 0.5rem;
-  width: 50%;
-  border: 1px solid;
-  margin: 1rem auto 1rem auto;
-  box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
-  cursor: pointer;
-  &:active {
-    width: 45%;
-    padding: 0.2rem;
-  }
 `;
 
 const Mexico = styled.div`
