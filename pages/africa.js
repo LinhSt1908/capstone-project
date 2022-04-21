@@ -4,8 +4,18 @@ import styled from "styled-components";
 import { Line } from "../pages/index";
 import Image from "next/image";
 import ethiopia from "../public/icons/ethiopia.png";
+import { useState } from "react";
 
-export default function Africa() {
+export default function Africa({ toggle }) {
+  const [showAnswer, setShowAnswer] = useState(false);
+  function toggle() {
+    setShowAnswer(!showAnswer);
+  }
+
+  function onClick(data) {
+    toggle();
+  }
+
   return (
     <>
       <Header />
@@ -13,9 +23,28 @@ export default function Africa() {
         <TextWrapperStyle>
           <Heading className="BigFontStyle">Afrika</Heading>
           <Line></Line>
-          <Button className="MediumFontStyle2">Äthiopien</Button>
+          <CountryDiv className="MediumFontStyle2">Äthiopien</CountryDiv>
           <Ethiopia>
-            <Image src={ethiopia} alt="Ethiopia" width={380} height={500} />
+            <Image src={ethiopia} alt="Ethiopia" width={280} height={400} />
+            <TotalContainer className="SmallFontStyle">
+              Welches Tier muss ein Bräutigam besitzen um heiraten zu können?
+              <ChoiceContainer>
+                <Choice>A) Esel</Choice> <Choice>B) Affe</Choice>
+                <Choice>C) Schlange</Choice>
+              </ChoiceContainer>
+              <Button className="MediumFontStyle" onClick={toggle}>
+                Antwort
+              </Button>
+              <p
+                className="MediumFontStyle2"
+                style={{
+                  display: showAnswer ? "block" : "none",
+                }}
+                showAnswer={showAnswer}
+              >
+                A)! 🎉
+              </p>
+            </TotalContainer>
           </Ethiopia>
         </TextWrapperStyle>
       </MainWrapper>
@@ -38,7 +67,7 @@ const Heading = styled.div`
   margin-top: 3em;
 `;
 
-const Button = styled.div`
+export const CountryDiv = styled.div`
   background-color: #f9e4d4;
   border-radius: 1rem;
   border-color: #6c4a4a;
@@ -47,6 +76,40 @@ const Button = styled.div`
   border: 1px solid;
   margin: 1rem auto 1rem auto;
   box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
+`;
+
+const Ethiopia = styled.div`
+  margin-top: 2rem;
+`;
+
+export const TotalContainer = styled.div`
+  width: 95%;
+  background-color: #efdad7;
+  border-radius: 1rem;
+  border: none;
+  margin: 1rem auto 4rem auto;
+  padding: 1rem;
+  box-shadow: 0.3rem 0.3rem 0.3rem #cac2c1;
+`;
+
+export const ChoiceContainer = styled.div`
+  margin-top: 0.5rem;
+`;
+
+export const Choice = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const Button = styled.button`
+  background-color: #efdad7;
+  border-radius: 1rem;
+  border-color: #6c4a4a;
+  padding: 0.3rem;
+  width: 40%;
+  border: 1px solid #6c4a4a;
+  margin: 0.5rem auto 0.5rem auto;
+  box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
   cursor: pointer;
   &:active {
     width: 45%;
@@ -54,6 +117,6 @@ const Button = styled.div`
   }
 `;
 
-const Ethiopia = styled.div`
-  margin-top: 2rem;
+const Answer = styled.p`
+  margin: auto;
 `;
