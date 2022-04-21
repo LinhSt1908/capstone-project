@@ -46,7 +46,7 @@ export default function America() {
                   display: showAnswer ? "block" : "none",
                 }}
               >
-                A)! 🎉
+                A) Lasso 🎉
               </p>
             </TotalContainer>
           </Mexico>

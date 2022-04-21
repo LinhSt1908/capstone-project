@@ -42,7 +42,7 @@ export default function Africa({ toggle }) {
                 }}
                 showAnswer={showAnswer}
               >
-                A)! 🎉
+                A) Esel 🎉
               </p>
             </TotalContainer>
           </Ethiopia>

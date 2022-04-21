@@ -45,7 +45,7 @@ export default function Europe() {
                   display: showAnswer ? "block" : "none",
                 }}
               >
-                C)! 🎉
+                C) Reinheit 🎉
               </p>
             </TotalContainer>
           </Norway>

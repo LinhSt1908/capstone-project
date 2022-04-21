@@ -32,7 +32,7 @@ export default function Asia() {
             <Image src={vietnam} alt="Vietnam" width={280} height={400} />
             <TotalContainer className="SmallFontStyle">
               Welches majestätische Tier spielt neben dem Drachen eine besondere
-              Rolle auf der Hochzeitskleidung?
+              Rolle auf der traditionellen Hochzeitskleidung?
               <ChoiceContainer>
                 <Choice>A) Löwe</Choice> <Choice>B) Phönix</Choice>
                 <Choice>C) Elch</Choice>
@@ -47,7 +47,7 @@ export default function Asia() {
                 }}
                 showAnswer={showAnswer}
               >
-                B)! 🎉
+                B) Phönix 🎉
               </p>
             </TotalContainer>
           </Vietnam>
