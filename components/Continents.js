@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import Image from "next/image";
-import africa from "../public/icons/africa.svg";
-import america from "../public/icons/america.svg";
-import asia from "../public/icons/asia.svg";
-import europe from "../public/icons/europe.svg";
 import Link from "next/link";
+import Image from "next/image";
+import styled from "styled-components";
+import asia from "../public/icons/asia.svg";
+import africa from "../public/icons/africa.svg";
+import europe from "../public/icons/europe.svg";
+import america from "../public/icons/america.svg";
 
 export default function Continents() {
   return (
@@ -36,7 +36,7 @@ const Button = styled.div`
   background-color: #f9e4d4;
   border-radius: 1rem;
   border-color: #6c4a4a;
-  padding: 0.5rem;
+  padding: 0.3rem;
   width: 50%;
   border: 1px solid;
   margin: 1rem auto 1rem auto;

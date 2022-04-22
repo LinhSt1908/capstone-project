@@ -1,11 +1,11 @@
 import Head from "next/head";
+import { useState } from "react";
+import styled from "styled-components";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import styled from "styled-components";
-import { useState } from "react";
-import EditButton from "../components/Buttons/EditButton";
 import CreateToDo from "../components/CreateToDo";
 import InputFormHome from "../components/InputFormHome";
+import EditButton from "../components/Buttons/EditButton";
 
 export default function Home({ addNewData, formData, addNewToDos, toDos }) {
   const [showMe, setShowMe] = useState(true);

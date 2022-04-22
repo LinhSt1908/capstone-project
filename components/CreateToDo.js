@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { useFieldArray, useForm } from "react-hook-form";
 import { useState } from "react";
+import styled from "styled-components";
 import { ToDoInput } from "./ToDoInput";
 import { ToDoListItem } from "./ToDoListItem";
 import { StyledButton } from "./Buttons/PlusButton";
+import { useFieldArray, useForm } from "react-hook-form";
 
 export default function InputFieldHome({
   addNewData,
@@ -48,7 +48,7 @@ export default function InputFieldHome({
       ) : (
         ""
       )}
-      <form onSubmit={handleSubmit(onToDoSubmit)} autoComplete="off">
+      <form onSubmit={handleSubmit(onToDoSubmit)}>
         <FlexContainer>
           <PlusButtonContainer>
             <p className="MediumFontStyle">Hinzufügen</p>

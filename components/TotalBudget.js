@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Button } from "../components/InputFormHome";
 
 export default function TotalBudget() {
   return (

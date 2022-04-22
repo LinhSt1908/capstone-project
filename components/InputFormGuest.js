@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { useFieldArray, useForm } from "react-hook-form";
 import { AddGuestInput } from "./AddGuestInput";
-import { Button } from "../components/InputFormHome";
 import { Input } from "../components/InputFormHome";
+import { Button } from "../components/InputFormHome";
+import { useFieldArray, useForm } from "react-hook-form";
 
 export default function AddGuest({ addNewGuest, showGuest, toggle }) {
   const {

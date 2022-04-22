@@ -1,13 +1,14 @@
+import { useState } from "react";
+import { Line } from "../pages/index";
+import styled from "styled-components";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import styled from "styled-components";
-import PlusButton from "../components/Buttons/PlusButton";
-import TotalBudget from "../components/TotalBudget";
 import Expenses from "../components/Expenses";
-import { Line } from "../pages/index";
-import { useState } from "react";
+import TotalBudget from "../components/TotalBudget";
 import { MinusButton } from "../components/ToDoInput";
+import PlusButton from "../components/Buttons/PlusButton";
 import { EditButton } from "../pages/guestpage";
+import { EditDeleteDiv } from "../pages/guestpage";
 
 export default function BudgetPage({ addNewExpense, newExpense }) {
   const [showExpense, setShowExpense] = useState(true);
@@ -111,12 +112,4 @@ export const ThinLine = styled.p`
   width: 80%;
   padding-top: 0.7rem;
   margin: auto;
-`;
-
-const EditDeleteDiv = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 0.5rem;
-  margin: 0.7rem auto 0 auto;
 `;

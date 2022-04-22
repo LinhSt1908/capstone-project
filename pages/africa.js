@@ -1,10 +1,10 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
+import Image from "next/image";
+import { useState } from "react";
 import styled from "styled-components";
 import { Line } from "../pages/index";
-import Image from "next/image";
+import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import ethiopia from "../public/icons/ethiopia.png";
-import { useState } from "react";
 
 export default function Africa({ toggle }) {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -74,7 +74,7 @@ export const CountryDiv = styled.div`
   padding: 0.5rem;
   width: 50%;
   border: 1px solid;
-  margin: 1rem auto 1rem auto;
+  margin: 2rem auto 2rem auto;
   box-shadow: 0.3rem 0.3rem 0.3rem #ccb29e;
 `;
 

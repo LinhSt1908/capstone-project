@@ -1,20 +1,16 @@
+import { useState } from "react";
+import { Line } from "../pages/index";
+import styled from "styled-components";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import styled from "styled-components";
 import InputFormGuest from "../components/InputFormGuest";
 import PlusButton from "../components/Buttons/PlusButton";
-import { MinusButton } from "../components/ToDoInput";
-import { Line } from "../pages/index";
-import { useState } from "react";
 import { useFieldArray, useForm } from "react-hook-form";
-import { ThinLine } from "../pages/budgetpage";
 
-export default function GuestPage({
-  addNewGuest,
-  newGuest,
-  // index,
-  // guestEntryRemove,
-}) {
+import { ThinLine } from "../pages/budgetpage";
+import { MinusButton } from "../components/ToDoInput";
+
+export default function GuestPage({ addNewGuest, newGuest }) {
   const {
     control,
     register,
@@ -28,28 +24,16 @@ export default function GuestPage({
     setShowGuest(!showGuest);
   }
 
-  // const {
-  //   fields: guestEntryFields,
-  //   append: guestEntryAppend,
-  //   remove: guestEntryRemove,
-  // } = useFieldArray({ control, name: "guestEntryArray" });
-
   return (
     <>
       <Header />
       <MainWrapper>
         <TextWrapperStyle>
-          <Heading className="BigFontStyle">Familie & Freunde</Heading>
+          <Heading className="BigFontStyle">Familie &amp; Freunde</Heading>
           <Line></Line>
-          {newGuest && (
-            // {guestEntryFields.map((item, index) => (
-            <GuestContainer
-            // register={register}
-            // watch={watch}
-            // index={index}
-            // guestEntryRemove={guestEntryRemove}
-            // key={item.id}
-            >
+
+          {newGuest ? (
+            <ShowGuestContainer>
               <p className="MediumFontStyle2">{newGuest.name}</p>
               <p className="MediumFontStyle2">
                 {newGuest.addGuestArray[0].newAddGuestItem}
@@ -75,9 +59,11 @@ export default function GuestPage({
                   -
                 </MinusButton>
               </EditDeleteDiv>
-            </GuestContainer>
-            // ))}
+            </ShowGuestContainer>
+          ) : (
+            ""
           )}
+
           <PlusButton toggle={toggle} />
           <InputFormGuest
             addNewGuest={addNewGuest}
@@ -104,7 +90,7 @@ const Heading = styled.div`
   margin-top: 3em;
 `;
 
-const GuestContainer = styled.div`
+const ShowGuestContainer = styled.div`
   width: 95%;
   display: flex;
   flex-direction: column;
@@ -137,8 +123,7 @@ export const EditButton = styled.button`
   }
 `;
 
-//export zu budgetpage
-const EditDeleteDiv = styled.div`
+export const EditDeleteDiv = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
