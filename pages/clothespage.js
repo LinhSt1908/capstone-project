@@ -1,7 +1,7 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import { Line } from "../pages/index";
 import styled from "styled-components";
+import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import Continents from "../components/Continents";
 
 export default function ClothesPage() {

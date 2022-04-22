@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Input } from "../components/InputFormHome";
 import { useForm } from "react-hook-form";
+import { Input } from "../components/InputFormHome";
 
 export default function Expenses({ addNewExpense, showExpense, toggle }) {
   const {

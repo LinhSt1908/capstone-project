@@ -1,15 +1,15 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
-import styled from "styled-components";
-import { Line } from "../pages/index";
 import Image from "next/image";
-import norway from "../public/icons/norway.jpeg";
-import { CountryDiv } from "./africa";
-import { TotalContainer } from "./africa";
+import { useState } from "react";
 import { Choice } from "./africa";
 import { Button } from "./africa";
+import { CountryDiv } from "./africa";
+import { Line } from "../pages/index";
+import styled from "styled-components";
+import { TotalContainer } from "./africa";
+import Header from "../components/Header";
+import NavBar from "../components/NavBar";
 import { ChoiceContainer } from "./africa";
-import { useState } from "react";
+import norway from "../public/icons/norway.jpeg";
 
 export default function Europe() {
   const [showAnswer, setShowAnswer] = useState(false);
