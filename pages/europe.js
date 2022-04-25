@@ -60,7 +60,7 @@ export default function Europe() {
               <ChoiceContainer>
                 <Choice>A) hat das Sagen</Choice>{" "}
                 <Choice>B) wird mehr Geld verdienen</Choice>
-                <Choice>C) darf den Wohnort bestimmen</Choice>
+                <Choice>C) darf das nächste Urlaubsziel bestimmen</Choice>
               </ChoiceContainer>
               <Button className="MediumFontStyle" onClick={toggle}>
                 Antwort
