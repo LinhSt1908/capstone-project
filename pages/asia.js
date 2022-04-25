@@ -10,7 +10,7 @@ import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import { ChoiceContainer } from "./africa";
 import vietnam from "../public/pictures/vietnam.jpeg";
-import myanmar from "../public/pictures/myanmar.png";
+import Myanmar from "../public/pictures/Myanmar.png";
 
 export default function Asia() {
   const [showAnswer, setShowAnswer] = useState(false);
