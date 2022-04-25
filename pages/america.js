@@ -9,7 +9,8 @@ import { TotalContainer } from "./africa";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
 import { ChoiceContainer } from "./africa";
-import mexico from "../public/icons/mexico.jpeg";
+import mexico from "../public/pictures/mexico.jpeg";
+import hawaii from "../public/pictures/hawaii.jpeg";
 
 export default function America() {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -29,7 +30,7 @@ export default function America() {
           <Line></Line>
           <CountryDiv className="MediumFontStyle2">Mexiko</CountryDiv>
           <Mexico>
-            <Image src={mexico} alt="Mexico" width={280} height={400} />
+            <Image src={mexico} alt="Mexico" width={350} height={470} />
             <TotalContainer className="SmallFontStyle">
               Was wird als Symbol für Unterstützung und Verantwortung in der Ehe
               betrachtet?
@@ -50,6 +51,29 @@ export default function America() {
               </p>
             </TotalContainer>
           </Mexico>
+
+          <CountryDiv className="MediumFontStyle2">Hawaii</CountryDiv>
+          <Hawaii>
+            <Image src={hawaii} alt="Hawaii" width={350} height={470} />
+            <TotalContainer className="SmallFontStyle">
+              Mit was befüllt das Brautpaar eine Glasvase während der Trauung?
+              <ChoiceContainer>
+                <Choice>A) Sand</Choice> <Choice>B) Steine</Choice>
+                <Choice>C) Blumen</Choice>
+              </ChoiceContainer>
+              <Button className="MediumFontStyle" onClick={toggle}>
+                Antwort
+              </Button>
+              <p
+                className="MediumFontStyle2"
+                style={{
+                  display: showAnswer ? "block" : "none",
+                }}
+              >
+                A) Sand 🎉
+              </p>
+            </TotalContainer>
+          </Hawaii>
         </TextWrapperStyle>
       </MainWrapper>
       <NavBar />
@@ -72,5 +96,9 @@ const Heading = styled.div`
 `;
 
 const Mexico = styled.div`
+  margin-top: 2rem;
+`;
+
+const Hawaii = styled.div`
   margin-top: 2rem;
 `;

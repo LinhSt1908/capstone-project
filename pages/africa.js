@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { Line } from "../pages/index";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
-import ethiopia from "../public/icons/ethiopia.png";
+import ethiopia from "../public/pictures/ethiopia.png";
+import southafrica from "../public/pictures/southafrica.png";
 
 export default function Africa({ toggle }) {
   const [showAnswer, setShowAnswer] = useState(false);
@@ -25,7 +26,7 @@ export default function Africa({ toggle }) {
           <Line></Line>
           <CountryDiv className="MediumFontStyle2">Äthiopien</CountryDiv>
           <Ethiopia>
-            <Image src={ethiopia} alt="Ethiopia" width={280} height={400} />
+            <Image src={ethiopia} alt="Ethiopia" width={350} height={470} />
             <TotalContainer className="SmallFontStyle">
               Welches Tier muss ein Bräutigam besitzen um heiraten zu können?
               <ChoiceContainer>
@@ -46,6 +47,34 @@ export default function Africa({ toggle }) {
               </p>
             </TotalContainer>
           </Ethiopia>
+          <CountryDiv className="MediumFontStyle2">Südafrika</CountryDiv>
+          <SouthAfrica>
+            <Image
+              src={southafrica}
+              alt="South Africa"
+              width={400}
+              height={430}
+            />
+            <TotalContainer className="SmallFontStyle">
+              Mit was bewerfen die Gäste das Brautpaar beim Tanzen?
+              <ChoiceContainer>
+                <Choice>A) Limonen</Choice> <Choice>B) Geld</Choice>
+                <Choice>C) Blütenblättern</Choice>
+              </ChoiceContainer>
+              <Button className="MediumFontStyle" onClick={toggle}>
+                Antwort
+              </Button>
+              <p
+                className="MediumFontStyle2"
+                style={{
+                  display: showAnswer ? "block" : "none",
+                }}
+                showAnswer={showAnswer}
+              >
+                B) Geld 🎉
+              </p>
+            </TotalContainer>
+          </SouthAfrica>
         </TextWrapperStyle>
       </MainWrapper>
       <NavBar />
@@ -82,6 +111,10 @@ const Ethiopia = styled.div`
   margin-top: 2rem;
 `;
 
+const SouthAfrica = styled.div`
+  margin-top: 2rem;
+`;
+
 export const TotalContainer = styled.div`
   width: 95%;
   background-color: #efdad7;
@@ -115,8 +148,4 @@ export const Button = styled.button`
     width: 45%;
     padding: 0.2rem;
   }
-`;
-
-const Answer = styled.p`
-  margin: auto;
 `;

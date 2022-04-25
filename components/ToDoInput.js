@@ -24,6 +24,13 @@ export const ToDoInput = ({ register, index, toDoRemove }) => {
   );
 };
 
+const InputContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const Input = styled.input`
   background-color: #f9e4d4;
   padding: 0.5rem;
@@ -33,13 +40,6 @@ const Input = styled.input`
   text-align: center;
   margin: auto;
   box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
-`;
-
-const InputContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 export const MinusButton = styled.button`
