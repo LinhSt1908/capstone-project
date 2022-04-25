@@ -31,7 +31,6 @@ export default function InputFieldHome({
   function onToDoSubmit(data) {
     addNewToDos(data);
     setShowInput(false);
-    //toggle();
   }
 
   const [showInput, setShowInput] = useState(false);
@@ -88,8 +87,6 @@ export default function InputFieldHome({
                   index={index}
                   toDoRemove={toDoRemove}
                   key={item.id}
-                  //onClick={() => setShowInput(true)}
-                  //toggle={toggle}
                 />
               ))}
             </Fieldset>
@@ -99,7 +96,6 @@ export default function InputFieldHome({
               }}
               showInput={showInput}
               addNewData={addNewData}
-              // toggle={toggle}
             >
               <Button type="submit" className="MediumFontStyle">
                 Speichern
@@ -111,6 +107,23 @@ export default function InputFieldHome({
     </>
   );
 }
+
+const StyledList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  z-index: +1;
+
+  box-shadow: 0 0 1em #6c4a4a;
+  margin: 3rem auto 2rem auto;
+  padding: 1.5rem;
+  width: 85%;
+  list-style-type: none;
+  > li:before {
+    content: "🪷";
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+`;
 
 const FlexContainer = styled.div`
   width: 100%;
@@ -130,13 +143,6 @@ const EditButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const Fieldset = styled.div`
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 0.5rem;
 `;
 
 const EditButton = styled.button`
@@ -160,6 +166,22 @@ const EditButton = styled.button`
   }
 `;
 
+const Fieldset = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.5rem;
+`;
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
+
 const Button = styled.button`
   background-color: #f9e4d4;
   border-radius: 1rem;
@@ -174,31 +196,5 @@ const Button = styled.button`
   &:active {
     width: 33%;
     padding: 0.2rem;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-`;
-
-const StyledList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  z-index: +1;
-
-  box-shadow: 0 0 1em #6c4a4a;
-  margin: 3rem auto 2rem auto;
-  padding: 1.5rem;
-  width: 85%;
-  list-style-type: none;
-  > li:before {
-    content: "🪷";
-    font-size: 1.5rem;
-    margin-right: 1rem;
   }
 `;

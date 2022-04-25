@@ -33,6 +33,13 @@ const Fieldset = styled.fieldset`
   border: none;
 `;
 
+const InputContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const Input = styled.input`
   background-color: #f9e4d4;
   height: 2.5rem;
@@ -43,11 +50,4 @@ const Input = styled.input`
   margin-left: 0;
   display: flex;
   box-shadow: inset 0.5rem 0.5rem 0.5rem #ccb29e;
-`;
-
-const InputContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 `;

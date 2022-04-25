@@ -138,13 +138,6 @@ const AddButton = styled.div`
   margin: 0.5rem;
 `;
 
-const FlexContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 const PlusButton = styled.button`
   background: rgb(245, 180, 36);
   background: linear-gradient(
@@ -164,4 +157,11 @@ const PlusButton = styled.button`
     width: 1.7rem;
     height: 1.7rem;
   }
+`;
+
+const FlexContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
