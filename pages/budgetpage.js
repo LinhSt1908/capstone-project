@@ -27,17 +27,16 @@ export default function BudgetPage({ addNewExpense, newExpense }) {
           <HeadingExpense className="MediumFontStyle2">
             Neue Ausgabe:
           </HeadingExpense>
-          {newExpense && (
-            <TotalContainer>
+
+          {newExpense.map((newExpense, index) => (
+            <TotalContainer key={index}>
               <BudgetContainer>
                 <div>
                   <p className="MediumFontStyle2">{newExpense.description}</p>
                   <p className="SmallFontStyle">{newExpense.category}</p>
                 </div>
                 <div>
-                  {newExpense && (
-                    <p className="MediumFontStyle2">{newExpense.amount}</p>
-                  )}
+                  <p className="MediumFontStyle2">{newExpense.amount}</p>
                 </div>
               </BudgetContainer>
               <ThinLine></ThinLine>
@@ -56,7 +55,7 @@ export default function BudgetPage({ addNewExpense, newExpense }) {
                 <MinusButton type="button">-</MinusButton>
               </EditDeleteDiv>
             </TotalContainer>
-          )}
+          ))}
 
           <PlusButton toggle={toggle} />
           <Expenses

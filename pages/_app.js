@@ -4,8 +4,8 @@ import { useState } from "react";
 function MyApp({ Component, pageProps }) {
   const [formData, setFormData] = useState(null);
   const [toDos, setToDos] = useState([]);
-  const [newGuest, setNewGuest] = useState(null);
-  const [newExpense, setNewExpense] = useState(null);
+  const [newGuest, setNewGuest] = useState([]);
+  const [newExpense, setNewExpense] = useState([]);
 
   function addNewData(data) {
     setFormData(data);
@@ -16,11 +16,11 @@ function MyApp({ Component, pageProps }) {
   }
 
   function addNewGuest(data) {
-    setNewGuest(data);
+    setNewGuest([...newGuest, data]);
   }
 
   function addNewExpense(data) {
-    setNewExpense(data);
+    setNewExpense([...newExpense, data]);
   }
 
   return (
