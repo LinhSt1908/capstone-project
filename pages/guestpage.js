@@ -32,13 +32,13 @@ export default function GuestPage({ addNewGuest, newGuest }) {
           <Heading className="BigFontStyle">Familie &amp; Freunde</Heading>
           <Line></Line>
 
-          {newGuest ? (
-            <ShowGuestContainer>
-              <p className="MediumFontStyle2">{newGuest.name}</p>
+          {newGuest.map((guest, index) => (
+            <ShowGuestContainer key={index}>
+              <p className="MediumFontStyle2">{guest.name}</p>
               <p className="MediumFontStyle2">
-                {newGuest.addGuestArray[0].newAddGuestItem}
+                {guest?.addGuestArray[0].newAddGuestItem}
               </p>
-              <p className="SmallFontStyle">{newGuest.group}</p>
+              <p className="SmallFontStyle">{guest.group}</p>
               <ThinLine></ThinLine>
               <EditDeleteDiv>
                 <EditButton type="button">
@@ -60,9 +60,7 @@ export default function GuestPage({ addNewGuest, newGuest }) {
                 </MinusButton>
               </EditDeleteDiv>
             </ShowGuestContainer>
-          ) : (
-            ""
-          )}
+          ))}
 
           <PlusButton toggle={toggle} />
           <InputFormGuest

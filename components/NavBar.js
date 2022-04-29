@@ -55,6 +55,7 @@ const IconStyle = styled.div`
   right: 0;
   display: flex;
   cursor: pointer;
+
   &:active {
     border-top: 5px solid #6c4a4a;
   }
