@@ -73,7 +73,7 @@ const TextWrapperStyle = styled.div`
 `;
 
 const HeadingNames = styled.div`
-  margin-top: 3.5em;
+  margin-top: 3em;
 `;
 
 const HeadingToDos = styled.div`
